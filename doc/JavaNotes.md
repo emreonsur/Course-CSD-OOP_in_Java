@@ -155,7 +155,7 @@ class App {
 >
 >Derleme işleminin başarıyla yapılması durumunda derleyiciler ya hiç bir mesaj vermezler ya da derleme işleminin başarılı olduğu da anlaşılan mesajlar verirler.
 >
->Programın çalışma zamanında oluşan hatalı durumlara genel olarak "excaption" veya "run time error" denir. Exception handling konusuna gelene kadar bir exception oluştuğunda program abnormal bir biçimde sonlanır olarak düşüneceğiz.
+>Programın çalışma zamanında oluşan hatalı durumlara genel olarak `exception` veya `run time error` denir. Exception işlemleri (exception handling) konusuna gelene kadar bir exception oluştuğunda program abnormal bir biçimde sonlanır olarak düşüneceğiz.
 >
 >Bir program için, programcı açısından iki durum söz konusudur: 
 >1. Derleme zamanı (compile time): Derleme işlemine ilişkin süreçtir.
@@ -11543,7 +11543,7 @@ class Date {
 
 #### 27 Haziran 2024
 
-##### Point sınıfı ve test kodları
+>Aşağıdaki, kartezyen düzlemde bir noktayı temsil eden `Point`sınıfını ve test kodlarını inceleyiniz.
 
 ```java
 package csd;
@@ -11680,8 +11680,14 @@ class Point {
 }
 ```
 
-##### Complex sınıfı ve test kodları
-	
+>Aşağıdaki, bir karmaşık sayıyı (complex number) temsil eden `Complex` sınıfın ve test kodlarını inceleyiniz.
+>**Açıklamalar:** $z = a + i * b$, $z_1 = a_1 + i * b_1$, $z_2 = a_2 + i * b_2$ karmaşık sayıları için
+>- $\bar{z} = a - i * b$
+>- $|z| = \sqrt{a^2 + b^2}$
+>- $z_1 \pm z_2 = (a_1 \pm a_2) + i * (b_1 \pm b2)$
+>- $z_1z_2 = (a_1 * a_2 - b_1 * b_2) + i * (a_1 * b_2 + a_2 * b_1)$
+>- $z_1 / z_2 =  (1 / |\bar{z_2}|) * (z_1 * \bar{z_2})$
+
 ```java
 package csd;
 
@@ -12644,7 +12650,7 @@ class EvenDiceProbabilitySimulation {
 
 #### 9 Temmuz 2024
 
->Anımsanacağı gibi rassal sayı üretimi bir takım Matematiksel işlemlerle bilgisayar dünyasında gerçekleştirilir. Şüphesiz bu işlemler kullanılan algoritmalara göre değişiklik gösterebilir. Ancak neredeyse tüm algoritmalarda **"tohum değeri (seed value)"** denilen bir değer kullanılır. Bu değer her sayı üretiminde ilgili algoritmaya göre güncellenir. Bu durumda bir işlem aynı tohum değeriyle tekrar yapıldığında aynı sonuçlar elde edilir. Yani örneğin bir programda `10` tane `[0, 99]` aralığında sayı üretiliyorsa bu program hep **aynı** tohum değeri ile çalıştırılırsa hep aynı sayılar aynı dizilimde üretilir. Random sınıfının default ctor'u her yaratılan nesne için tohum değerini farklı verecek şekilde yazılmıştır. Bu işlem genel olarak zaman kavramı kullanılarak yapılabilir. Örneğin tohum değeri belirli bir tarihten itibaren geçen milisaniye olarak alınırsa veya donanıma ilişkin üretilen tick sayısına bağlı olarak alınırsa her değer farklı olma eğiliminde olur. Random sınıfının tohum değerini başlangıçta programcıdan alabildiği bir ctor'u ve `setSeed` isimli bir metodu da vardır. Örneğin bir resim içerisinde resimde gözle değişiklikle anlaşılamayacak şekilde bir yazı gizlemek için yazının bitleri rassal olarak belirlenen pixel'lere yazılabilir. Bu durumda resimden yazı elde edilirken aynı pixel'lerin elde edilebilmesi için aynı tohum değeriyle üretim yapılması gerekir. Şüphesiz bu işlemin nasıl yapılacağına ilişkin pek çok detay söz konusudur. Burada önemli olan yani odaklanmanız örnekte tohum değerinin aynı olacak şekilde kullanılmasıdır.
+>Anımsanacağı gibi rassal sayı üretimi bir takım Matematiksel işlemlerle bilgisayar dünyasında gerçekleştirilir. Şüphesiz bu işlemler kullanılan algoritmalara göre değişiklik gösterebilir. Ancak neredeyse tüm algoritmalarda **"tohum değeri (seed value)"** denilen bir değer kullanılır. Bu değer her sayı üretiminde ilgili algoritmaya göre güncellenir. Bu durumda bir işlem aynı tohum değeriyle tekrar yapıldığında aynı sonuçlar elde edilir. Yani örneğin bir programda `10` tane `[0, 99]` aralığında sayı üretiliyorsa bu program hep **aynı** tohum değeri ile çalıştırılırsa hep aynı sayılar aynı dizilimde üretilir. Random sınıfının default ctor'u her yaratılan nesne için tohum değerini farklı verecek şekilde yazılmıştır. Bu işlem genel olarak zaman kavramı kullanılarak yapılabilir. Örneğin tohum değeri belirli bir tarihten itibaren geçen milisaniye olarak alınırsa veya donanıma ilişkin üretilen tick sayısına bağlı olarak alınırsa her değer farklı olma eğiliminde olur. Random sınıfının tohum değerini başlangıçta programcıdan alabildiği bir ctor'u ve `setSeed` isimli bir metodu da vardır. Örneğin bir resim içerisinde resimde gözle değişiklikle anlaşılamayacak şekilde bir yazı gizlemek için yazının bitleri rassal olarak belirlenen pixel'lere yazılabilir. Bu durumda resimden yazı elde edilirken aynı pixel'lerin elde edilebilmesi için aynı tohum değeriyle üretim yapılması gerekir. Şüphesiz bu işlemin nasıl yapılacağına ilişkin pek çok detay söz konusudur. Burada önemli olan yani odaklanmanız gereken, örnekte tohum değerinin aynı olacak şekilde kullanılmasıdır.
 
 >Aşağıdaki demo örneğin her çalıştırılmasında üretilen ilk 10 sayının dizilimi diğer çalıştırmalardan farklıdır. İkinci 10 sayının dizilimi ise tohum değerine bağlı olduğundan daha önceki bir çalıştırılmada girilen tohum değeri ile aynı değer tekrar girildiğinde dizilim aynı olur
 
@@ -14309,9 +14315,7 @@ class App {
 >**Sınıf Çalışması:** Parametresi ile aldığı bir yazının pangram olup olmadığını test eden `isPangramTR` ve `isPangramEN` isimli metotları yazınız ve aşağıdaki kod ile test ediniz.
 >
 >**Açıklamalar:**
->- İlgili dilin alfabesindeki tüm karakterler kullanılarak oluşturulan ve içerisinde özel isim olmayan anlamlı 
-cümlelere "pangram" denir. 
-Örneğin tipik bir İnglizce pangram şudur:	
+>- İlgili dilin alfabesindeki tüm karakterler kullanılarak oluşturulan ve içerisinde özel isim olmayan anlamlı cümlelere "pangram" denir. Örneğin tipik bir İnglizce pangram şudur:	
 >	
 >		The quick brown fox jumps over the lazy dog.
 >Örneğin tipik bir Türkçe pangram şudur:
@@ -14854,8 +14858,7 @@ class StringUtil {
 >**Sınıf Çalışması:** Parametresi ile aldığı bir yazının palindrome olup olmadığını test eden `isPalindrome` isimli metodu `StringUtil` sınıfı içerisinde yazınız ve test ediniz.
 >
 >**Açıklamalar:**
->- Alfabetik olmayan karakterleri çıkartıldığında tersi kendisine eşit olan yazılara pandrom denir.
-Örneğin
+>- Alfabetik olmayan karakterleri çıkartıldığında tersi kendisine eşit olan yazılara pandrom denir. Örneğin
 >
 >		Ey Edip Adana'da pide ye
 >		Anastas mum satsana
@@ -15311,7 +15314,7 @@ class Point {
 
 >`String` sınıfına `Java 15` ile birlikte `formatted` isimli bir metot eklenmiştir. Bu metot format metodunun non-static versiyonu olarak düşünülebilir. Bu durumda programcının `Java 15` ve üzerinde yani pratikte `Java 17+` ile çalışıyorsa `format` metodu yerine bu metodu çağırması uygundur
 >
->Aşağısdaki demo önreği inceleyiniz
+>Aşağıdaki demo örneği inceleyiniz
 
 ```java
 package csd;
@@ -15685,8 +15688,9 @@ class StringUtil {
 >
 >		public static void main(String [] args);
 >Bu prototipte uygunluğu bozmayacak tek değişiklik parametre ismi olan args'ta yapılabilir. Java programına verilen sınıfın `main` metodunun bu prototipe sahip olması zorunludur. Aksi durumda exception oluşur. Akışın başladığı main metoduna "entry point" dendiğini anımsayınız. Entry point olarak belirlenen main metodunun ait olduğu UDT kesinlikle bir sınıf olmalıdır.
->
->**Anahtar Notlar:** `Java 21` ile birlikte entry point olarak belirlenen main metodunun yapısına ilişkin bazı esnek kullanımlar söz konusu olmaktadır. Bu durum "uygulama kurslarında" ele alınacaktır.
+
+**Anahtar Notlar:** `Java 21` ile birlikte entry point olarak belirlenen main metodunun yapısına ilişkin bazı esnek kullanımlar söz konusu olmaktadır. Bu durum "uygulama kurslarında" ele alınacaktır.
+
 >- `public` olarak bildirilen bir UDT, ismi ile aynı isimde bir `.java` dosyasında olmalıdır. Aksi durumda error oluşur. Bu durumda bir java dosyası içerisinde ancak dosya ismi ile aynı isimde bir UDT `public` olabilir
 >- Bir java dosyasında dosya ile aynı isimde olan bir UDT olmak zorunda değildir. Ancak bu durum pratikte çok kullanılmaz
 >- Paket bildirimi tüm bildirimlerden önce olmalıdır. Dolayısıyla bir java dosyasında bir tane paket bildirimi yapılabilir
@@ -15700,7 +15704,7 @@ class StringUtil {
 >- Paketler içiçe bile olsa farklı paketlerdir. Yani örneğin `arman` paketi içerisinde `SerialPort` isimli bir sınıf varsa, `arman.util` paketi içerisinde de `SerialPort` isimli bir sınıf olabilir. Çünkü paketler **farklıdır** ve isim çakışması oluşmaz
 >- Paketler isim çakışmasını engellemek için düşünülmüştür. Paketler ile farklı firmalar kendi paket isimleriyle UDT yazdıklarında UDT'lerin isimleri aynı olsa bile diğerleriyle birlikte aynı projede kullanılabilirler
 >- Paket isimleri genelde bir firmaya özgü tekil (unique) bir olan domain isminden türetilir. Örneğin CSD'nin paketleri domain ismi "csystem.org" olduğundan "org.csystem" paketi altında yazılır. Bu bir **convention**'dır ve firmalar özellikle bu kurala genel UDT'ler için mutlaka uyarlar. Pratikte domain ismi altında doğrudan bir UDT bildirilmez. En az bir tane paket altında bildirilir. Yani aslında bu convention'da domain ismi taban paket (base package) olarak kullanılır. Programcının bir UDT'yi koyacağı paketi okunabilir/algılanabilir ve isim çakışma olasığını en aza olacak şekilde belirler. Bu anlamda alt paketlerin fazla olması bir sorun oluşturmaz. Paket isimlendirmede programcı anlamlı olacak şekilde cömert olmalıdır.
->- Paket isimleri bir convention olarak **tamamı küçük harf** olacak şekilde bildirilir. Birden fazla kelimeden oluşuyorsa **bitişik** olarak yazılır. Örnğin:
+>- Paket isimleri bir convention olarak **tamamı küçük harf** olacak şekilde bildirilir. Birden fazla kelimeden oluşuyorsa **bitişik** olarak yazılır. Örneğin:
 >
 >		org.csystem.util.net
 >		org.csystem.util.mapoperations
@@ -16568,7 +16572,7 @@ public class Test {
 >Bu bildirimin genel biçimi şu şekildedir:
 
 		import <paket ismi>[.alt paket listesi>].<UDT ismi>;
->Bu bildirimde belirtilen UDT ismi derleme birimöi boyunca her yerde niteliksiz olarak kullanılabilir (visible). Ya da başka bir deyişle buradaki bildirim, bu ismin derleme birimi boyunca niteliksiz kullanılabileceğini belirtir. Yani bu bildirime ilişkin isim niteliksiz isim arama genel kurallarına göre aranmaz. Yani ilgili isim için niteliksiz isim arama genel kuralları uygulanmaz
+>Bu bildirimde belirtilen UDT ismi derleme birimi boyunca her yerde niteliksiz olarak kullanılabilir (visible). Ya da başka bir deyişle buradaki bildirim, bu ismin derleme birimi boyunca niteliksiz kullanılabileceğini belirtir. Yani bu bildirime ilişkin isim niteliksiz isim arama genel kurallarına göre aranmaz. Yani ilgili isim için niteliksiz isim arama genel kuralları uygulanmaz
 
 ```java
 package org.csystem.app;
@@ -16785,11 +16789,6 @@ class App {
 ```
 
 ```java
-/**
- * Point class that represents a point in geometry
- * Last Update: 15th August 2024
- * @author Java-Jan-2024 Group
- */
 package org.csystem.math.geometry;
 
 import static java.lang.Math.*;
@@ -16847,11 +16846,6 @@ public class Point {
 ```
 
 ```java
-/**
- * Complex class that represents a complex number in math
- * Last Update: 15th August 2024
- * @author Java-Jan-2024 Group
- */
 package org.csystem.math;
 
 import static java.lang.Math.*;
@@ -16956,7 +16950,7 @@ public class Complex {
 	}
 }
 ```
-###### Yıldızsız import static bildirimi (import static on demand declaration)
+###### Yıldızsız import static bildirimi (import static single member declaration)
 
 >Bu bildirimin genel biçimi şu şekildedir:
 
@@ -16984,11 +16978,6 @@ class App {
 ```
 
 ```java
-/**
- * Point class that represents a point in geometry
- * Last Update: 15th August 2024
- * @author Java-Jan-2024 Group
- */
 package org.csystem.math.geometry;
 
 import static java.lang.Math.pow;
@@ -17047,11 +17036,6 @@ public class Point {
 ```
 
 ```java
-/**
- * Complex class that represents a complex number in math
- * Last Update: 15th August 2024
- * @author Java-Jan-2024 Group
- */
 package org.csystem.math;
 
 import static java.lang.Math.sqrt;
@@ -17157,13 +17141,13 @@ public class Complex {
 }
 ```
 
-**Anahtar Notlar:** Paket ve isim arama konusunda burada anlatılmayan diğer detaylar ya ileride ele alınacaktır ya da pratikte çok kullanılmadağından hiç ele alınmayacaktır
+**Anahtar Notlar:** Paket ve isim arama konusunda burada anlatılmayan diğer detaylar ya ileride ele alınacaktır ya da pratikte çok kullanılmadağından hiç ele alınmayacaktır.
 
 #### 20 Ağustos 2024
 
 ##### Diziler (Arrays)
 
->Elemanları **aynı türden** olan ve elemanları bellekte **peşpeşe** tutulacak şekilde yaratılan veri yapısıdır. Diziler programlamada en temel veri yapılarıdır. Hatta bazı veri yapıları dizi kullanılarak implemente edilebilir.
+>Elemanları **aynı türden** olan ve elemanları bellekte **peş peşe** tutulacak şekilde yaratılan veri yapısıdır. Diziler programlamada en temel veri yapılarıdır. Hatta önemli bazı veri yapıları dizi kullanılarak implemente edilebilir.
 >
 >Java'da diziler `heap`'de yaratılırlar. Yani sınıfsal temsil edilmişlerdir. Java'da `stack`'de dizi **yaratılamaz**. `T` bir tür ismi olmak üzere her bir elemanı `T` türünden olan (bu durumda `T` türden dizi de denebilir) bir dizi referansı bildiriminin iki biçimi vardır:
 >
@@ -17208,7 +17192,7 @@ class App {
 		new <tür>[<int türüne doğrudan dönüşebilen türden bir değer>];
 >Burada `[]` içerisinde verilen değere dizinin uzunluğu (length) denir. Uzunluk dizinin eleman sayısıdır. Java'da dizi uzunluğunun sabit ifadesi olması gerekmez. Dizi yaratıldıktan sonra uzunluğu **değiştirilemez**. Dizi uzunluğunun negatif olması durumunda **exception** oluşur. Dizi uzunluğuna `length` isimli veri elemanı ile erişilebilir. `length` veri elemanının değeri **değiştirilemez**
 >
->Dizinin elemanlarına erişmek için `[]` operatörü (subscription operator) kullanılır. Bu operatör özel amaçlı iki operandlı ve araek durumundadır. Operatörün birinci operandı bir referansı ikinci operandı ise `int` türüne **doğrudan** dönüşebilen bir değer olmalıdır. İkinci operandına indeks değeri de denilmektedir. Dizinin ilk elemanına sıfır numaralı indeks değeri kullanılarak erişilir. Yani bu anlamda dizinin elemanlarına erişmek için kullanılan indeks değerleri `[0, length)` aralığıdır. Bu operatör operatör öncelik tablosunda birinci seviyededir. Operatörün ürettiği değer indeksteki elemana ilişkin değişkendir. Indeks numarası pozitif ya da negatif bakımdan sınırlar dışında bir değer olarak verilirse exception oluşur.
+>Dizinin elemanlarına erişmek için `[]` operatörü (subscription operator) kullanılır. Bu operatör özel amaçlı iki operandlı ve ara ek durumundadır. Operatörün birinci operandı bir referansı ikinci operandı ise `int` türüne **doğrudan** dönüşebilen bir değer olmalıdır. İkinci operandına indeks değeri de denilmektedir. Dizinin ilk elemanına sıfır numaralı indeks değeri kullanılarak erişilir. Yani bu anlamda dizinin elemanlarına erişmek için kullanılan indeks değerleri `[0, length)` aralığıdır. Bu operatör operatör öncelik tablosunda birinci seviyededir. Operatörün ürettiği değer indeksteki elemana ilişkin değişkendir. Indeks numarası pozitif ya da negatif bakımdan sınırlar dışında bir değer olarak verilirse exception oluşur.
 >
 >Dizi yaratıldığında elemanlarının her birine `default` değerler atanır.
 
@@ -25741,7 +25725,7 @@ class Engine {
 >
 
 >![Vehicles](./media/Vehicles.PNG)
->Burada dikkat edilirse `Vehicle`'dan aşağıya doğru inildikçe bir **özelleşme (specialization)**, `Vehicle`'a doğru çıkıldıkça bir **genelleşme (generalization)** söz konusu olmaktadır. Bir sınıfın birden fazla (doğrudan) taban sınıfı olması durumuna `çoklu türetme (multiple inheritance)` denir. Java'da bir sınıfın yalnızca bir tane taban sınıfı vardır. Bu anlamda Java'da çoklu türetme yoktur. Aslında çoklu türetmenin programlamada bir kaşılığı da doğrudan yoktur. Bu anlamda Java'da ileride göreceğimiz `arayüzler (interfaces)` ile çoklu türetme belirli ölçüde (prtatikteki isterleri karşılayacak kadar) desteklenmektedir. Yani, Java'da çoklu türetmenin olmaması bir eksiklik oluşturmaz. Örneğin `Vehicle` hiyerarşisinde `deniz uçağı (float plane)` hem `deniz aracı` hem de `hava aracı` değildir. Deniz uçağı, hava aracıdır. Bu anlamda deniz uçağı için çoklu türetme söz konusu olmaz. 
+>Burada dikkat edilirse `Vehicle`'dan aşağıya doğru inildikçe bir **özelleşme (specialization)**, `Vehicle`'a doğru çıkıldıkça bir **genelleşme (generalization)** söz konusu olmaktadır. Bir sınıfın birden fazla (doğrudan) taban sınıfı olması durumuna `çoklu türetme (multiple inheritance)` denir. Java'da bir sınıfın yalnızca bir tane taban sınıfı vardır. Bu anlamda Java'da çoklu türetme yoktur. Aslında çoklu türetmenin programlamada bir karşılığı da doğrudan yoktur. Bu anlamda Java'da ileride göreceğimiz `arayüzler (interfaces)` ile çoklu türetme belirli ölçüde (pratikteki isterleri karşılayacak kadar) desteklenmektedir. Yani, Java'da çoklu türetmenin olmaması bir eksiklik oluşturmaz. Örneğin `Vehicle` hiyerarşisinde `deniz uçağı (float plane)` hem `deniz aracı` hem de `hava aracı` değildir. Deniz uçağı, hava aracıdır. Bu anlamda deniz uçağı için çoklu türetme söz konusu olmaz. 
 >Bir sınıf kendisinden doğrudan ya da dolaylı olarak türetilemez. Yani türetme ilişkisinde döngüsellik söz konusu değildir. 
 >
 >Java'da türetme **extends** anahtar sözcüğü ile yapıılır. Türetme işleminde taban sınıfın elemanları türemiş sınıfa aktarılmış olur. Örneğin taban sınıfta olan bir metot türemiş sınıfa da aktarılır. Benzer şekilde ver elemanları da türemiş sınıfa aktarılır. Yani bu elemanlara türemiş sınıf türünden referans ile de erişilebilir.
@@ -28341,7 +28325,7 @@ public class DemoObjectArrayGeneratorApp {
 }
 ```
 
->`Java 14` ile birlikte **instance of pattern (pattern matching of instanceof)** dile eklenerek instanceof operatörü ile birlikte dowcasting otomatik olarak yapılarak basitleştirilmiştir. Derleyici downcasting işlemine ilişkin kodu üretir.
+>`Java 14` ile birlikte **instanceof pattern (pattern matching of instanceof)** dile eklenerek instanceof operatörü ile birlikte dowcasting otomatik olarak yapılarak basitleştirilmiştir. Derleyici downcasting işlemine ilişkin kodu üretir.
 
 >Yukarıdaki demo örnek aşağıdaki gibi yapılabilir
 
@@ -30583,8 +30567,4607 @@ class A {
 >
 >Programlamada temel amaç yeni eklentilerin mümkün olduğunca eski kodlara dokunmadan yani senaryo değişmedikten sonra eski kodlarda değişiklik yapılmadan yazılabilmesidir. Bu işlem adeta bi puzzle'ın ya da bir lego'nun parçasını eklemek biçiminde düşünülebilir. Böyle bir tasarım ile ürünün yeni versiyonu daha çabuk ve daha sistematik bir biçimde elde edilebilir. RTP de bunu sağlayan araçlardan biridir. Bir ürünün kod kalitesi için şu önerme söylenebilir: **Bir ürünün yeni versiyon çıkartılırken eski kodlara ilişkin senaryolarda ve algoritmalarda değişiklik olmadıktan sonra eski kodlara ne kadar az müdahale edilirse ürünün kodları o kadar kalitelidir.** 
 
+##### 6 Mart 2025
 ###### Object Sınıfının Önemli Bazı Sanal Metotları
 
->- toString metodu:
->- equals metodu:
+>Bu bölümde Object sınıfının önemli bazı sanal metotları ele alınacaktır:
+
+>- **toString metodu:** Object sınıfının toString isimli sanal bir metodu vardır. Bu metot bir nesneye ilişkin yazı karşılığı olması durumunda `override edilmesi` bir convention olan metottur. Aslında biz sınıflarımız içerisinde toString metodunu hep override ettik. toString metodu JavaSE ve çeşitli üçüncü parti kütüphaneler ve ortamlar (framework) tarafından da duruma göre Object sınıfı üzerinden çağrılmaktadır. Örneğin print ve println metotlarının Object parametreli overload'ları standart output'a yani ekrana basacakları yazıyı toString metodunu çağırarak elde ederler:
+
+```java
+package org.csystem.app;  
+  
+import org.csystem.math.geometry.Circle;  
+import org.csystem.math.geometry.Point;  
+  
+class App {  
+    public static void main(String[] args)  
+    {  
+        Circle c = new Circle(100.5);  
+        Point p = Point.createCartesian(300, 67.8);  
+  
+        System.out.println(c);  
+        System.out.println(p);  
+    }  
+}
+```
+
+
+>printf (ve String sınıfının format metodu) metodu s format karakteri ile verilen bir argüman için yazı karşılığını toString metodunu çağırarak elde eder metodu s format karakteri ile verilen bir argüman için yazı karşılığını toString metodunu çağırarak elde eder.  
+
+```java
+package org.csystem.app;  
+  
+import org.csystem.math.geometry.Circle;  
+import org.csystem.math.geometry.Point;  
+  
+class App {  
+    public static void main(String[] args)  
+    {  
+        Circle c = new Circle(100.5);  
+        Point p = Point.createCartesian(300, 67.8);  
+  
+        System.out.printf("Circle -> %s%n", c);  
+        System.out.printf("Point -> %s%n", p);  
+    }  
+}
+```
+
+>Temel bir tür için de printf metodu (ve String sınıfının format metodu) s format karakteri için dolaylı olarak toString metodunu çağırarak değerin yazı karşılığını elde eder. Çünkü temel türden bir ifadenin değeri printf metoduna geçilirken parametre türü Object olduğundan otomatik kutulama yapılır, sonrasında ilgili sarmalayan sınıfın toString metodu çağrılmış olur.  
+
+```java
+package org.csystem.app;  
+  
+class App {  
+    public static void main(String[] args)  
+    {  
+        int a = 10;  
+        double b = 10.5;  
+        boolean c = true;  
+  
+        System.out.printf("a = %s, b = %s, c = %s%n", a, b, c);  
+    }  
+}
+```
+
+>Anımsanacağı gibi + operatörünün bir operandı String türündense diğer operandının yazı karşılığı elde edilerek yazı  birleştirmesi işlemi yapılır. Diğer türün yazı karşılığı yine toString metodu çağrılarak elde edilir. 
+
+```java
+package org.csystem.app;  
+  
+import org.csystem.math.geometry.Circle;  
+import org.csystem.math.geometry.Point;  
+  
+class App {  
+    public static void main(String[] args)  
+    {  
+        Circle c = new Circle(100.5);  
+        Point p = Point.createCartesian(300, 67.8);  
+  
+        System.out.println("Circle -> " + c);  
+        System.out.println("Point -> " + p);  
+    }  
+}
+```
+
+
+>Diğer tür temel  türlerden biriyse önce otomatik kutulanır sonra ilgili sarmalayan sınıfın toString metodu çağrılarak yazı karşılığı  elde edilir.
+
+```java
+package org.csystem.app;  
+  
+class App {  
+    public static void main(String[] args)  
+    {  
+        int a = 10;  
+        double b = 10.5;  
+        boolean c = true;  
+  
+        System.out.println("a = " + a + ", b = " + b + ", c = " + c);  
+    }  
+}
+```
+
+>Object sınıfının toString metodu nesneye özgü, genel olarak tekil (unique) bir bilgiye ilişkin yazıya karşılık gelir. Bu yazının nasıl elde edildiğine ilişkin detaylar şu aşamada önemsizdir.
+
+```java
+package org.csystem.app;  
+  
+class App {  
+    public static void main(String[] args)  
+    {  
+        Sample s1 = new Sample();  
+        Sample s2 = new Sample();  
+  
+        System.out.println(s1);  
+        System.out.println(s2);  
+    }  
+}  
+  
+class Sample {  
+    //...  
+}
+```
+
+>ArrayList sınıfının toString metodu elemanlara ilişkin yazı karşılığını yine her bir eleman için toString metodunu çağırarak elde eder. 
+
+```java
+package org.csystem.app.generator;  
+  
+import org.csystem.generator.random.point.RandomPointGenerator;  
+import org.csystem.util.console.Console;  
+  
+import java.util.ArrayList;  
+import java.util.Random;  
+  
+public class DemoPointListGeneratorApp {  
+    public static void run()  
+    {  
+        RandomPointGenerator generator = new RandomPointGenerator(new Random(), -1000, 1000);  
+        int count = Console.readInt("Input number of points:");  
+  
+        ArrayList points = new ArrayList<>();  
+  
+        generator.addPoints(points, count);  
+  
+        for (Object o : points)  
+            Console.write("%s ", o);  
+  
+        Console.writeLine();  
+  
+        Console.writeLine(points);  
+    }  
+  
+    public static void main(String[] args)  
+    {  
+        run();  
+    }  
+}
+```
+
+```java
+package org.csystem.generator.random.point;  
+  
+import org.csystem.math.geometry.Point;  
+  
+import java.util.ArrayList;  
+import java.util.Random;  
+  
+public class RandomPointGenerator {  
+    private final Random m_random;  
+    private final double m_origin, m_bound;  
+  
+    private Point createRandomPoint()  
+    {  
+        return Point.createCartesian(m_random.nextDouble(m_origin, m_bound), m_random.nextDouble(m_origin, m_bound));  
+    }  
+  
+    public RandomPointGenerator(Random random, double origin, double bound)  
+    {  
+        m_random = random;  
+        m_origin = origin;  
+        m_bound = bound;  
+    }  
+  
+  
+    public void addPoints(ArrayList points, int count)  
+    {  
+        for (int i = 0; i < count; i++)  
+            points.add(createRandomPoint());  
+    }  
+  
+    public Point[] createPointArray(int count)  
+    {  
+        Point [] points = new Point[count];  
+  
+        for (int i = 0; i < count; i++)  
+            points[i] = createRandomPoint();  
+  
+        return points;  
+    }
+}
+```
+
+
+>- **equals metodu:** Object sınıfının equals isimli metodunun, Object parametreli ve geri dönüş değeri boolean'dır. Bu metot aynı türden iki nesne için mantıksal eşitlik karşılaştırması için kullanılır. Sınıfı yazan programcı, sınıf türünden iki nesne için mantıksal eşitlik kavramı söz konusuysa equals metodunu bir convention olarak override eder. Yani aslında override edilen metotta eşitliğe ilişkin kodlar yazılır. Object sınıfının equals metodu referans (adres) karşılaştırması yapar. equals metodu JavaSE ve çeşitli üçüncü parti kütüphaneler ve ortamlar (framework) tarafından da duruma göre Object sınıfı üzerinden çağrılmaktadır. Örneğin ArrayList sınıfının `indexOf`ve `lastIndexOf`metotları arama işlemini `null` araması yapılmıyorsa equals metodunu çağırarak yaparlar. Bu durumda ArrayList içerisinde tutulan referansın dinamik türü için, override edilmişse equals çağrılmış olur. Bu durumda ilgili tür için mantıksal eşitlik karşılaştırması yapılmış olur. equals metodu override edilirken, aldığı Object referansına ilişkin dinamik türün ilgili sınıf türünden olup olmadığına da genel olarak bakılır. Özel bir durum yoksa bu bir convention olarak düşünülmelidir. Pek çok static kod analizi aracı default konfigürasyonunda bu kontrolün yapılmadığı durumlarda uyarı vermektedir. Bu kontrol tipik olarak `instanceof` operatörü ile yapılabilir.
+
+>Aşağıdaki demo örneği Point sınıfının equals metodunu kaldırarak da çalıştırıp sonucu gözlemleyiniz
+
+```java
+package org.csystem.app;  
+  
+import org.csystem.math.geometry.Point;  
+import org.csystem.util.console.Console;  
+import org.csystem.util.thread.ThreadUtil;  
+  
+import java.util.Random;  
+  
+class App {  
+    public static void main(String[] args)  
+    {  
+        Point origin = Point.createCartesian(0, 0);  
+        Random r = new Random();  
+  
+        while (true) {  
+            Point point = Point.createCartesian(r.nextInt(-1, 1), r.nextInt(-1, 1));  
+  
+            Console.writeLine(point);  
+  
+            if (point.equals(origin))  
+                break;  
+  
+            ThreadUtil.sleep(1000);  
+        }  
+    }  
+}
+```
+
+>Aşağıdaki demo örneği Point sınıfının equals metodunu kaldırarak da çalıştırıp sonucu gözlemleyiniz
+
+```java
+package org.csystem.app;  
+  
+import org.csystem.math.geometry.Point;  
+import org.csystem.util.console.Console;  
+  
+import java.util.ArrayList;  
+import java.util.Random;  
+  
+class App {  
+    public static void main(String[] args)  
+    {  
+        ArrayList  list = new ArrayList();  
+        Random r = new Random();  
+  
+        while (true) {  
+            int x = r.nextInt(-1, 1);  
+            int y = r.nextInt(-1, 1);  
+  
+            list.add(Point.createCartesian(x, y));  
+  
+            if (x == 0 && y == 0)  
+                break;  
+        }  
+  
+        Console.writeLine("Size:%d", list.size());  
+        int index = list.indexOf(Point.createCartesian(0, 0));  
+  
+        Console.writeLine("Index:%d", index);  
+    }  
+}
+```
+
+```java
+package org.csystem.math.geometry;  
+  
+import static java.lang.Math.*;  
+  
+public class Point {  
+    private final double m_x;  
+    private final double m_y;  
+  
+    private static Point create(double a, double b)  
+    {  
+       return new Point(a, b);  
+    }  
+  
+    private Point(double x, double y)  
+    {  
+       m_x = x;  
+       m_y = y;  
+    }  
+  
+    public static Point createCartesian(double x, double y)  
+    {  
+       return create(x, y);  
+    }  
+  
+    public static Point createPolar(double r, double theta)  
+    {  
+       return create(r * cos(theta), r * sin(theta));  
+    }  
+  
+    public double getX()  
+    {  
+       return m_x;  
+    }  
+  
+    public double getY()  
+    {  
+       return m_y;  
+    }  
+  
+    public double euclideanDistance()  
+    {  
+       return euclideanDistance(0, 0);  
+    }  
+      
+    public double euclideanDistance(Point other)  
+    {  
+       return euclideanDistance(other.m_x, other.m_y);  
+    }  
+      
+    public double euclideanDistance(double x, double y)  
+    {  
+       return PointCommon.euclideanDistance(m_x, m_y, x, y);  
+    }    
+  
+    public boolean equals(Object other)  
+    {  
+       return other instanceof Point p && PointCommon.equals(m_x, m_y, p.m_x, p.m_y);  
+    }  
+  
+    public String toString()  
+    {  
+       return PointCommon.toString(m_x, m_y);  
+    }  
+}
+```
+
+```java
+package org.csystem.math.geometry;  
+  
+import static java.lang.Math.*;  
+  
+public class MutablePoint {  
+    private double m_x;  
+    private double m_y;  
+  
+    private static MutablePoint create(double a, double b)  
+    {  
+       return new MutablePoint(a, b);  
+    }  
+  
+    private MutablePoint(double x, double y)  
+    {  
+       m_x = x;  
+       m_y = y;  
+    }  
+  
+    public static MutablePoint createCartesian(double x, double y)  
+    {  
+       return create(x, y);  
+    }  
+  
+    public static MutablePoint createPolar(double r, double theta)  
+    {  
+       return create(r * cos(theta), r * sin(theta));  
+    }  
+  
+    public double getX()  
+    {  
+       return m_x;  
+    }  
+  
+    public void setX(double x)  
+    {  
+       m_x = x;  
+    }  
+  
+    public double getY()  
+    {  
+       return m_y;  
+    }  
+  
+    public void setY(double y)  
+    {  
+       m_y = y;  
+    }  
+  
+    public double euclideanDistance()  
+    {  
+       return euclideanDistance(0, 0);  
+    }  
+      
+    public double euclideanDistance(MutablePoint other)  
+    {  
+       return euclideanDistance(other.m_x, other.m_y);  
+    }  
+      
+    public double euclideanDistance(double x, double y)  
+    {  
+       return PointCommon.euclideanDistance(m_x, m_y, x, y);  
+    }    
+      
+    public void offset(double dxy)  
+    {  
+       offset(dxy, dxy);  
+    }  
+      
+    public void offset(double dx, double dy)  
+    {  
+       m_x += dx;  
+       m_y += dy;  
+    }  
+  
+    public boolean equals(Object other)  
+    {  
+       return other instanceof MutablePoint p && PointCommon.equals(m_x, m_y, p.m_x, p.m_y);  
+    }  
+  
+    public String toString()  
+    {  
+       return PointCommon.toString(m_x, m_y);  
+    }  
+}
+```
+
+```java
+package org.csystem.math.geometry;  
+  
+import static java.lang.Math.pow;  
+import static java.lang.Math.sqrt;  
+  
+class PointCommon {  
+    static final double DELTA = 0.000001;  
+    static String toString(double x, double y)  
+    {  
+        return "(%f, %f)".formatted(x, y);  
+    }  
+  
+    static boolean equals(double x1, double y1, double x2, double y2)  
+    {  
+        return Math.abs(x1 - x2) < DELTA && Math.abs(y1 - y2) < DELTA;  
+    }  
+  
+    static double euclideanDistance(double x1, double y1, double x2, double y2)  
+    {  
+        return sqrt(pow(x1 - x2, 2) + pow(y1 - y2, 2));  
+    }  
+}
+```
+
+>Aşağıdaki sınıfların equals metotlarını inceleyiniz
+```java
+package org.csystem.wrapper.primitive;  
+  
+public final class IntValue {  
+    private static final int CACHE_MIN = -128;  
+    private static final int CACHE_MAX = 127;  
+    private static final int INDEX_DIFFERENCE = 128;  
+  
+    private static final IntValue [] CACHE = new IntValue[CACHE_MAX - CACHE_MIN + 1];  
+    private final int m_value;  
+  
+    private IntValue(int value)  
+    {  
+        m_value = value;  
+    }  
+  
+    public static IntValue of(int value)  
+    {  
+        if (value < CACHE_MIN || value > CACHE_MAX)  
+            return new IntValue(value);  
+  
+        if (CACHE[value + INDEX_DIFFERENCE] == null)  
+            CACHE[value + INDEX_DIFFERENCE] = new IntValue(value);  
+  
+        return CACHE[value + INDEX_DIFFERENCE];  
+    }  
+  
+    public int getValue()  
+    {  
+        return m_value;  
+    }  
+  
+    public boolean equals(Object other)  
+    {  
+        return other instanceof IntValue i && i.m_value == m_value;  
+    }  
+      
+    public String toString()  
+    {  
+        return String.valueOf(m_value);  
+    }  
+}
+```
+
+
+```java
+package org.csystem.math;  
+  
+import static java.lang.Math.sqrt;  
+  
+public class Complex {  
+    private static final double DELTA = 0.00001;  
+    private final double m_real;  
+    private final double m_imag;  
+      
+    private static Complex add(double re1, double im1, double re2, double im2)  
+    {  
+       return new Complex(re1 + re2, im1 + im2);  
+    }  
+      
+    private static Complex subtract(double re1, double im1, double re2, double im2)  
+    {  
+       return add(re1, im1, -re2, -im2);       
+    }  
+      
+    public Complex()  
+    {  
+       m_real = m_imag = 0;  
+    }  
+      
+    public Complex(double real)  
+    {  
+       m_real = real;  
+       m_imag = 0;  
+    }  
+      
+    public Complex(double real, double imag)  
+    {  
+       m_real = real;  
+       m_imag = imag;  
+    }  
+      
+    public static Complex add(double val, Complex z)  
+    {  
+       return add(val, 0, z.m_real, z.m_imag);  
+    }  
+      
+    public Complex add(Complex other)  
+    {  
+       return add(m_real, m_imag, other.m_real, other.m_imag);  
+    }  
+      
+    public Complex add(double val)  
+    {  
+       return add(m_real, m_imag, val, 0);  
+    }    
+      
+    public static Complex subtract(double val, Complex z)  
+    {  
+       return subtract(val, 0, z.m_real, z.m_imag);  
+    }  
+      
+    public Complex subtract(Complex other)  
+    {  
+       return subtract(m_real, m_imag, other.m_real, other.m_imag);  
+    }  
+      
+    public Complex subtract(double val)  
+    {  
+       return subtract(m_real, m_imag, val, 0);  
+    }  
+  
+    public Complex getConjugate()  
+    {             
+       return new Complex(m_real, -m_imag);  
+    }  
+      
+    public double getNorm()  
+    {  
+       return sqrt(m_real * m_real + m_imag * m_imag);  
+    }  
+      
+    public double getLength()  
+    {  
+       return getNorm();  
+    }  
+  
+    public boolean equals(Object other)  
+    {  
+       return other instanceof Complex z && Math.abs(m_real - z.m_real) < DELTA && Math.abs(m_imag - z.m_imag) < DELTA;  
+    }  
+  
+    public String toString()  
+    {  
+       return "(%.2f, %.2f)".formatted(m_real, m_imag);  
+    }  
+}
+```
+
+```java
+package org.csystem.math;  
+  
+import static java.lang.Math.sqrt;  
+  
+public class MutableComplex {  
+    private static final double DELTA = 0.00001;  
+    private double m_real;  
+    private double m_imag;  
+  
+    private static MutableComplex add(double re1, double im1, double re2, double im2)  
+    {  
+       return new MutableComplex(re1 + re2, im1 + im2);  
+    }  
+  
+    private static MutableComplex subtract(double re1, double im1, double re2, double im2)  
+    {  
+       return add(re1, im1, -re2, -im2);  
+    }  
+  
+    public MutableComplex()  
+    {  
+    }  
+  
+    public MutableComplex(double real)  
+    {  
+       m_real = real;  
+    }  
+  
+    public MutableComplex(double real, double imag)  
+    {  
+       m_real = real;  
+       m_imag = imag;  
+    }  
+      
+    public static MutableComplex add(double val, MutableComplex z)  
+    {  
+       return add(val, 0, z.m_real, z.m_imag);  
+    }  
+      
+    public MutableComplex add(MutableComplex other)  
+    {  
+       return add(m_real, m_imag, other.m_real, other.m_imag);  
+    }  
+      
+    public MutableComplex add(double val)  
+    {  
+       return add(m_real, m_imag, val, 0);  
+    }    
+      
+    public static MutableComplex subtract(double val, MutableComplex z)  
+    {  
+       return subtract(val, 0, z.m_real, z.m_imag);  
+    }  
+      
+    public MutableComplex subtract(MutableComplex other)  
+    {  
+       return subtract(m_real, m_imag, other.m_real, other.m_imag);  
+    }  
+      
+    public MutableComplex subtract(double val)  
+    {  
+       return subtract(m_real, m_imag, val, 0);  
+    }  
+      
+    public void inc(double val)  
+    {  
+       m_real += val;  
+    }  
+      
+    public void inc()  
+    {  
+       inc(1);  
+    }  
+      
+    public void dec(double val)  
+    {  
+       inc(-val);  
+    }  
+      
+    public void dec()  
+    {  
+       dec(1);  
+    }  
+      
+    public MutableComplex getConjugate()  
+    {             
+       return new MutableComplex(m_real, -m_imag);  
+    }  
+      
+    public double getNorm()  
+    {  
+       return sqrt(m_real * m_real + m_imag * m_imag);  
+    }  
+      
+    public double getLength()  
+    {  
+       return getNorm();  
+    }    
+  
+    public boolean equals(Object other)  
+    {  
+       return other instanceof MutableComplex z && Math.abs(m_real - z.m_real) < DELTA && Math.abs(m_imag - z.m_imag) < DELTA;  
+    }  
+  
+    public String toString()  
+    {  
+       return "(%.2f, %.2f)".formatted(m_real, m_imag);  
+    }  
+}
+```
+
+
+```java
+package org.csystem.math.geometry;  
+  
+import static java.lang.Math.abs;  
+import static java.lang.Math.*;  
+  
+public class Circle {  
+    protected static final double DELTA = 0.000001;  
+    private double m_r;  
+  
+    public Circle()  
+    {  
+    }  
+  
+    public Circle(double radius)  
+    {  
+        setRadius(radius);  
+    }  
+  
+    public void setRadius(double radius)  
+    {  
+        m_r = abs(radius);  
+    }  
+  
+    public double getRadius()  
+    {  
+        return m_r;  
+    }  
+  
+    public double getArea()  
+    {  
+        return PI * m_r * m_r;  
+    }  
+  
+    public double getCircumference()  
+    {  
+        return 2 * PI * m_r;  
+    }  
+  
+    public boolean equals(Object other)  
+    {  
+        return other instanceof Circle c &&Math.abs(m_r - c.m_r) < DELTA;  
+    }  
+  
+    public String toString()  
+    {  
+        return "Radius = %f, Area = %f, Circumference = %f".formatted(m_r, getArea(), getCircumference());  
+    }  
+}
+```
+
+```java
+package org.csystem.math.geometry;  
+  
+public class AnalyticalCircle extends Circle {  
+    private static final double DELTA = 0.0000001;  
+    private final MutablePoint m_center;  
+  
+    public AnalyticalCircle()  
+    {  
+        this(0, 0);  
+    }  
+  
+    public AnalyticalCircle(double radius)  
+    {  
+        this(radius, 0, 0);  
+    }  
+  
+    public AnalyticalCircle(double x, double y)  
+    {  
+        this(0, x, y);  
+    }  
+  
+    public AnalyticalCircle(double radius, double x, double y)  
+    {  
+        super(radius);  
+        m_center = MutablePoint.createCartesian(x, y);  
+    }  
+  
+    public double getX()  
+    {  
+        return m_center.getX();  
+    }  
+  
+    public void setX(double x)  
+    {  
+        m_center.setX(x);  
+    }  
+  
+    public double getY()  
+    {  
+        return m_center.getY();  
+    }  
+  
+    public void setY(double y)  
+    {  
+        m_center.setY(y);  
+    }  
+  
+    public void setCenter(double x, double y)  
+    {  
+        setX(x);  
+        setY(y);  
+    }  
+  
+    public void offset(double dx, double dy)  
+    {  
+        m_center.offset(dx, dy);  
+    }  
+  
+    public void offset(double dxy)  
+    {  
+        offset(dxy, dxy);  
+    }  
+  
+    public boolean isTangent(AnalyticalCircle other)  
+    {  
+        return Math.abs(centersDistance(other) - getRadius() - other.getRadius()) < DELTA;  
+    }  
+  
+    public double centersDistance(AnalyticalCircle other)  
+    {  
+        return m_center.euclideanDistance(other.m_center);  
+    }  
+  
+    public boolean equals(Object other)  
+    {  
+        return other instanceof AnalyticalCircle ac && super.equals(other) && m_center.equals(ac.m_center);  
+    }  
+  
+    public String toString()  
+    {  
+        return "%s, Center:%s".formatted(super.toString(), m_center);  
+    }  
+}
+```
+**Anahtar Notlar:** Bir sınıfta equals metodu override edildiğinde, Object sınıfının hashCode metodu da override edilir. Yani, bu iki metot ya hiç override edilmez ya da ikisiz birden override edilir. hashCode metodu `Java ile Uygulama Geliştirme I` kursunda ele alınacaktır. Burada equals metodunun override edildiği sınıflarda hashCode override edilmeyecektir. 
+
+##### 11 Mart 2025
+
+##### abstract Sınıflar ve abstract Metotlar
+
+>Bazı sınıflar türünden doğrudan nesne yaratmanın anlamı yoktur. Bu sınıflar tipik olarak bir kavramı **soyut (abstract)** olarak temsil ederler. Örneğin, bir insan kaynakları otomasyon sistemine ilişkin bir grup sınıfın detayların eklenmediği edildiği UML şeması aşağıdaki gibi olsun:
+
+![DemoCompanyApp](./media/DemoCompanyApp.PNG)
+>Burada `Employee` türünden doğrudan nesne yaratılmasının pratikte bir anlamı yoktur. Bu sınıf bu hiyerarşide çalışan kavramını (dolayısıyla ortak özelliklerini) temsil etmektedir. Bu sınıftan türetilmiş olan sınıfların doğrudan yaratılmış nesneler olarak anlamı vardır. Yani, Employee türünden nesne türemiş sınıf içerisinde (nesnesel kapsama) anlamlıdır. Ayrıca Employee sınıfının, bir çalışanın sigorta ödeme miktarını veren `calculateInsurancePayment` metodunun gövdesi yani kodları anlamsızdır ancak bu metodun sanal olarak var olması gerekir. Çünkü `HumanResource` sınıfının `payInsurance` metodu içerisinde sanal olarak çağrılaması gerekir. Türemiş sınıflarda bu metot override edilerek `payInsurance` metodu içerisinde çağrılmış olur. İşte böylesi gövdesi olması gerekmeyen (ya da gövdesi olması anlamsız) sanal metotlara **soyut metotlar (abstract methods)** denir. Doğrudan nesne özelliği göstermeyen sınıflara **soyut sınıflar (abstract sınıflar)** denir. Doğrudan nesne özelliği gösteren sınıflara ise **somut sınıflar (concrete classes)** denir. Buradaki hiyerarşiye ilişkin demo uygulamanın kodları bölüm sonunda `DemoCompanyApp` olarak incelenebilir.
+>
+>Programcı soyut bir sınıf gördüğünde şunu anlamalıdır: **Bu sınıf bir kavramı soyut olarak temsil ediyor, bu türünden bir nesne doğrudan yaratılamaz, çünkü anlamsız. Bu sınıftan türetilen sınıflar olmalı ya da yazmalıyım ve muhtemel bulunan abstract metotları (hatta belki de abstract olmayan sanal metotları) override etmeliyim ki somut bir sınıf olsun.** Benzer şekilde programcı bir sınıf hiyerarşisi için soyut bir kavramı temsil eden sınıfı `abstract` olarak düşünmelidir.
+>
+>abstract bir sınıf `abstract` anahtar sözcüğü ile bildirilir. Bir metot abstract olarak bildirildiğinde metoda gövde yazılmaz. Yazılması error oluşturur. Bir sınıfın en az bir tane abstract metodu varsa sınıfı abstract olarak bildirilmelidir. Aksi durumda error oluşur. abstract bir sınıfın abstract bir metodu olmak zorunda değildir. Bu durumda en az bir tane abstract metodu olan bir sınıf `concrete` olamaz. abstract bir sınıfın da veri elemanları olabilir. abstract bir sınıf türünden nesne new operatörü ile yaratılamaz. abstract bir sınıf türünden nesne türemiş sınıf nesnesi içerisinde yaratılır. abstract bir sınıfın ctor'u olabilir. abstract bir sınıfın ctor'unun public yapılmasının bir anlamı yoktur, protected olarak bildirilmesi daha uygundur. Çünkü zaten abstract türünden bir nesne sınıf dışından yaratılamaz. Şüphesiz duruma göre private ya da no-modifier ctor'lar da olabilir.
+
+```java
+package org.csystem.app;  
+  
+class App {  
+    public static void main(String[] args)  
+    {  
+        A a = new A(); //error  
+    }  
+}  
+  
+abstract class D {  
+    public void bar()  
+    {  
+        //...  
+    }  
+}  
+  
+abstract class C {  
+    public abstract void foo(int x) //error  
+    {  
+  
+    }  
+  
+    public void bar()  
+    {  
+        //...  
+    }  
+}  
+  
+class B { //error  
+    public abstract void foo(int x);  
+  
+    public void bar()  
+    {  
+        //...  
+    }  
+}  
+  
+class Z extends A { //error  
+	//...
+}  
+  
+  
+abstract class Y extends A {  
+	//...
+}  
+  
+class X extends A {  
+    public X()  
+    {  
+  
+    }  
+  
+    public X(int a)  
+    {  
+        super(a);  
+    }  
+  
+    public void foo(int x)  
+    {  
+        //...  
+    }  
+}  
+  
+abstract class A {  
+    private int m_x;  
+  
+    protected A()  
+    {  
+    }  
+  
+    protected A(int x)  
+    {  
+        m_x = x;  
+    }  
+  
+    public abstract void foo(int x);  
+  
+    public void bar()  
+    {  
+        //...  
+    }  
+}
+```
+
+
+##### 18 Mart 2025
+
+>Aşağıda sınıf şeması verilen demo örneğin kodlarını inceleyiniz
+
+![DemoCompanyApp](./media/DemoCompanyApp.PNG)
+```java
+package org.csystem.app.company;  
+  
+import org.csystem.util.thread.ThreadUtil;  
+  
+import java.util.Random;  
+  
+public class DemoCompanyApp {  
+    private static Manager getManager()  
+    {  
+        return new Manager("Kaan Aslan", "12345678945", "Mecidiyeköy", "Yazılım", 300000);  
+    }  
+  
+    private static Worker getWorker()  
+    {  
+        return new Worker("Güray Sönmez", "12345789321", "Bodrum", 400, 8);  
+    }  
+  
+    private static ProjectWorker getProjectWorker()  
+    {  
+        return new ProjectWorker("Lokman Köse", "23456789233", "Çağlayan", 200, 8, "Dernek", 2000);  
+    }  
+  
+    private static SalesManager getSalesManager()  
+    {  
+        return new SalesManager("Ali Serçe", "34567892345", "Geyikli", "Pazarlama", 400000, 30000);  
+    }  
+  
+    private static Employee getEmployee(Random random)  
+    {  
+        return switch (random.nextInt(4)) {  
+            case 0 -> getWorker();  
+            case 1 -> getProjectWorker();  
+            case 2 -> getSalesManager();  
+            default -> getManager();  
+        };  
+    }  
+  
+  
+    public static void run()  
+    {  
+        Random random = new Random();  
+        HumanResources humanResources = new HumanResources();  
+  
+        while (true) {  
+            Employee employee = getEmployee(random);  
+  
+            humanResources.payInsurance(employee);  
+            ThreadUtil.sleep(1000);  
+        }  
+    }  
+  
+    public static void main(String[] args)  
+    {  
+        run();  
+    }  
+}
+```
+
+```java
+package org.csystem.app.company;  
+  
+public abstract class Employee {  
+    private String m_name;  
+    private String m_citizenId;  
+    private String m_address;  
+    //...  
+  
+    protected Employee(String name, String citizenId, String address)  
+    {  
+        //...  
+        m_name = name;  
+        m_citizenId = citizenId;  
+        m_address = address;  
+    }  
+  
+    public String getName()  
+    {  
+        return m_name;  
+    }  
+  
+    public void setName(String name)  
+    {  
+        //...  
+        m_name = name;  
+    }  
+  
+    public String getCitizenId()  
+    {  
+        return m_citizenId;  
+    }  
+  
+    public void setCitizenId(String citizenId)  
+    {  
+        //...  
+        m_citizenId = citizenId;  
+    }  
+  
+    public String getAddress()  
+    {  
+        return m_address;  
+    }  
+  
+    public void setAddress(String address)  
+    {  
+        //...  
+        m_address = address;  
+    }  
+  
+    public abstract double calculateInsurancePayment();  
+  
+    //...  
+}
+```
+
+
+```java
+package org.csystem.app.company;  
+  
+import org.csystem.util.console.Console;  
+  
+public class HumanResources {  
+    //...  
+  
+    public void payInsurance(Employee employee)  
+    {  
+        Console.writeLine("--------------------------------------------------------");  
+        Console.writeLine("Name:%s", employee.getName());  
+        Console.writeLine("CitizenId:%s", employee.getCitizenId());  
+        Console.writeLine("Insurance payment:%f", employee.calculateInsurancePayment());  
+        Console.writeLine("--------------------------------------------------------");  
+    }  
+}
+```
+
+
+```java
+package org.csystem.app.company;  
+  
+public class Manager extends Employee {  
+    private String m_department;  
+    private double m_salary;  
+  
+    public Manager(String name, String citizenId, String address, String department, double salary)  
+    {  
+        super(name, citizenId, address);  
+        m_department = department;  
+        m_salary = salary;  
+    }  
+  
+    public String getDepartment()  
+    {  
+        return m_department;  
+    }  
+  
+    public void setDepartment(String department)  
+    {  
+        //...  
+        m_department = department;  
+    }  
+  
+    public double getSalary()  
+    {  
+        return m_salary;  
+    }  
+  
+    public void setSalary(double salary)  
+    {  
+        //...  
+        m_salary = salary;  
+    }  
+  
+    public double calculateInsurancePayment()  
+    {  
+        return m_salary * 1.5;  
+    }  
+}
+```
+
+
+```java
+package org.csystem.app.company;  
+  
+public class Worker extends Employee{  
+    private double m_feePerHour;  
+    private int m_hourPerDay;  
+  
+    public Worker(String name, String citizenId, String address, double feePerHour, int hourPerDay)  
+    {  
+        super(name, citizenId, address);  
+        m_feePerHour = feePerHour;  
+        m_hourPerDay = hourPerDay;  
+    }  
+  
+    public double getFeePerHour()  
+    {  
+        return m_feePerHour;  
+    }  
+  
+    public void setFeePerHour(double feePerHour)  
+    {  
+        m_feePerHour = feePerHour;  
+    }  
+  
+    public int getHourPerDay()  
+    {  
+        return m_hourPerDay;  
+    }  
+  
+    public void setHourPerDay(int hourPerDay)  
+    {  
+        m_hourPerDay = hourPerDay;  
+    }  
+  
+    public double calculateInsurancePayment()  
+    {  
+        return m_feePerHour * m_hourPerDay * 30;  
+    }  
+  
+    //...  
+}
+```
+
+
+```java
+package org.csystem.app.company;  
+  
+public class ProjectWorker extends Worker {  
+    private String m_projectName;  
+    private double m_extraFee;  
+  
+    public ProjectWorker(String name, String citizenId, String address, double feePerHour, int hourPerDay, String projectName, double extraFee)  
+    {  
+        super(name, citizenId, address, feePerHour, hourPerDay);  
+        m_projectName = projectName;  
+        m_extraFee = extraFee;  
+    }  
+  
+    public String getProjectName()  
+    {  
+        return m_projectName;  
+    }  
+  
+    public void setProjectName(String projectName)  
+    {  
+        m_projectName = projectName;  
+    }  
+  
+    public double getExtraFee()  
+    {  
+        return m_extraFee;  
+    }  
+  
+    public void setExtraFee(double extraFee)  
+    {  
+        m_extraFee = extraFee;  
+    }  
+  
+    public double calculateInsurancePayment()  
+    {  
+        return super.calculateInsurancePayment() + m_extraFee * 30;  
+    }  
+}
+```
+
+
+```java
+package org.csystem.app.company;  
+  
+public class SalesManager extends Manager {  
+    private double m_saleExtra;  
+  
+    public SalesManager(String name, String citizenId, String address, String department, double salary, double saleExtra)  
+    {  
+        super(name, citizenId, address, department, salary);  
+        m_saleExtra = saleExtra;  
+    }  
+  
+    public double getSaleExtra()  
+    {  
+        return m_saleExtra;  
+    }  
+  
+    public void setSaleExtra(double saleExtra)  
+    {  
+        m_saleExtra = saleExtra;  
+    }  
+  
+    //...  
+}
+```
+
+##### final Metotlar
+
+>Non-static bir metot final olarak bildirildiğinde artık türemiş sınıfta override edilemez. Yani final bir metot override işlemine kapatılmış bir metottur. Kendisi override edilmiş olabilir. Ait olduğu sınıftan türeyen bir sınıfta artık override edilemez. Şüphesiz abstract metotlar final olarak bildirilemez. 
+
+
+```java
+class C extends B {  
+    public void foo() //error  
+    {  
+        Console.writeLine("B.foo");  
+    }  
+}  
+  
+class B extends A {  
+    public final void foo()  
+    {  
+        Console.writeLine("B.foo");  
+    }  
+}  
+  
+class A {  
+    public void foo()  
+    {  
+        Console.writeLine("A.foo");  
+    }  
+}
+```
+
+
+###### 28 Mart 2025
+
+##### Sınıfın static ve non-static initializer Elemanları
+
+>Sınıf içerisinde tüm metotların dışında static anahtar sözcüğü ile yazılan bloklara **static initializer**, static anahtar sözcüğü kullanılmadan yazılan bloklara ise **non-static initializer** elemanları denir. Sınıfın initializer (static ve non-static) elemanları istenildiği kadar yazılabilir. Ancak pratikte yazılacaksa 1 tane olacak şekilde yazılır. Sınıfın static initializer'ı, sınıfın bir elemanı ilk kez kullanıldığında ve bir kez olmak üzere çalıştırılır. Eğer static initializer birden fazla ise yazılma sırasında yukarıdan aşağıya olacak şekilde çalıştırılır. 
+
+
+```java
+package org.csystem.app;  
+  
+import org.csystem.util.console.Console;  
+  
+import java.util.Random;  
+  
+class App {  
+    public static void main(String[] args)  
+    {  
+        Sample.foo();  
+        Console.writeLine("-------------------------");  
+        Sample.foo();  
+    }  
+}  
+  
+class Sample {  
+    static {  
+        Console.writeLine("static initializer1");  
+    }  
+  
+    static {  
+        Console.writeLine("static initializer3");  
+    }  
+  
+    public Sample(int a)  
+    {  
+  
+    }  
+  
+    static {  
+        Console.writeLine("static initializer3");  
+    }  
+  
+    public static void foo()  
+    {  
+        Console.writeLine("foo");  
+    }  
+}
+```
+
+>Anımsanacağı gibi sınıfın static initializer'ı içerisinde static ve final veri elemanına değer verilebilir. Bu durumda static initializer tipik olarak toplamda bir kez yapılacak işlemler için kullanılır. Adından da anlaşıldığı gibi static initializer static metot gibidir. Yani sınıfın non-static elemanlarına static initializer içerisinde doğrudan erişilemez. static bir veri elemanına static initializer içerisinde değer vermenin bildirim noktasında değer vermekten teknik olarak farkı yoktur. Ancak static initializer bir akış belirtir:
+
+```java
+package org.csystem.app;  
+  
+import org.csystem.util.console.Console;  
+  
+import java.util.Random;  
+  
+class App {  
+    public static void main(String[] args)  
+    {  
+        Console.writeLine("Value:%d", Sample.getValue());  
+        Console.writeLine("Value:%d", Sample.getValue());  
+    }  
+}  
+  
+class Sample {  
+    private static final int VALUE;  
+  
+    static {  
+        Console.writeLine("static initializer");  
+        Random random = new Random();  
+  
+        VALUE = random.nextInt(100);  
+    }
+  
+   public static int getValue()  
+   {  
+       return VALUE;  
+   }  
+  
+    public static void foo()  
+    {  
+        Console.writeLine("foo");  
+    }  
+}
+```
+
+>Şüphesiz bu örnek aşağıdaki gibi bir metot yazılarak ve metodun geri dönüş değeri VALUE veri elemanına ilk değer olarak verilebilir:
+
+```java
+package org.csystem.app;  
+  
+import org.csystem.util.console.Console;  
+  
+import java.util.Random;  
+  
+class App {  
+    public static void main(String[] args)  
+    {  
+        Console.writeLine("Value:%d", Sample.getValue());  
+        Console.writeLine("Value:%d", Sample.getValue());  
+    }  
+}  
+  
+class Sample {  
+    private static final int VALUE = randomInValue();  
+  
+    private static int randomInValue()  
+    {  
+        Console.writeLine("static initializer");  
+        Random random = new Random();  
+  
+        return random.nextInt(100);  
+    }  
+  
+   public static int getValue()  
+   {  
+       return VALUE;  
+   }  
+  
+    public static void foo()  
+    {  
+        Console.writeLine("foo");  
+    }  
+}
+```
+
+
+>Sınıfın static initializer elemanı bazı durumlarda kodun daha derli toplu yazılabilmesi amacıyla programcı tarafından tercih edilebilir:
+
+```java
+package org.csystem.util.string;  
+  
+import java.util.ArrayList;  
+import java.util.Random;  
+  
+public final class StringUtil {  
+    private StringUtil()  
+    {  
+    }  
+  
+    private static final String LETTERS_EN;  
+    private static final String LETTERS_TR;  
+    private static final String CAPITAL_LETTERS_EN;  
+    private static final String CAPITAL_LETTERS_TR;  
+    private static final String ALL_LETTERS_EN;  
+    private static final String ALL_LETTERS_TR;  
+  
+    static {  
+       LETTERS_EN = "abcdefghijklmnopqrstuvwxyz";  
+       LETTERS_TR = "abcçdefgğhıijklmnoöprsştuüvyz";  
+       CAPITAL_LETTERS_EN = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";  
+       CAPITAL_LETTERS_TR = "ABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZ";  
+       ALL_LETTERS_EN = LETTERS_EN + CAPITAL_LETTERS_EN;  
+       ALL_LETTERS_TR = LETTERS_TR + CAPITAL_LETTERS_TR;  
+    }  
+  
+    public static String capitalize(String s)  
+    {  
+       return s.isEmpty() ? s : Character.toUpperCase(s.charAt(0)) + s.substring(1).toLowerCase();  
+    }  
+  
+    public static String changeCase(String s)  
+    {  
+       StringBuilder sb = new StringBuilder(s);  
+  
+       for (int i = 0; i < s.length(); ++i) {  
+          char c = s.charAt(i);  
+  
+          sb.setCharAt(i, Character.isLowerCase(c) ? Character.toUpperCase(c) : Character.toLowerCase(c));  
+       }  
+  
+       return sb.toString();  
+    }  
+  
+  
+    public static int countString(String s1, String s2)  
+    {  
+       int count = 0;  
+  
+       for (int i = 0; (i = s1.indexOf(s2, i)) != -1; ++i, ++count)  
+          ;  
+  
+       return count;  
+    }  
+  
+    public static String generateRandomText(Random random, int count, String sourceText)  
+    {  
+       char [] c = new char[count];  
+  
+       for (int i = 0; i < count; ++i)  
+          c[i] = sourceText.charAt(random.nextInt(sourceText.length()));  
+  
+       return String.valueOf(c);  
+    }  
+  
+    public static String generateRandomTextEN(Random random, int count)  
+    {  
+       return generateRandomText(random, count, ALL_LETTERS_EN);  
+    }  
+  
+    public static String generateRandomTextTR(Random random, int count)  
+    {  
+       return generateRandomText(random, count, ALL_LETTERS_TR);  
+    }  
+  
+    public static String [] generateRandomTexts(Random random, int count, int origin, int bound, String sourceText)  
+    {  
+       String [] str = new String[count];  
+  
+       for (int i = 0; i < count; ++i)  
+          str[i] = generateRandomText(random, random.nextInt(origin, bound), sourceText);  
+  
+       return str;  
+    }  
+  
+    public static String [] generateRandomTextsEN(Random random, int count, int origin, int bound)  
+    {  
+       return generateRandomTexts(random, count, origin, bound, ALL_LETTERS_EN);  
+    }  
+  
+    public static String [] generateRandomTextsTR(Random random, int count, int origin, int bound)  
+    {  
+       return generateRandomTexts(random, count, origin, bound, ALL_LETTERS_TR);  
+    }  
+  
+    public static boolean isPalindrome(String s)  
+    {  
+       int left = 0;  
+       int right = s.length() - 1;  
+  
+       while (left < right) {  
+          char cLeft = s.charAt(left);  
+  
+          if (!Character.isLetter(cLeft)) {  
+             ++left;  
+             continue;  
+          }  
+  
+          char cRight = s.charAt(right);  
+  
+          if (!Character.isLetter(cRight)) {  
+             --right;  
+             continue;  
+          }  
+  
+          if (Character.toLowerCase(cLeft) != Character.toLowerCase(cRight))  
+             return false;  
+  
+          ++left;  
+          --right;  
+       }  
+  
+       return true;  
+    }  
+  
+  
+    public static boolean isPangram(String s, String alphabet)  
+    {  
+       for (int i = 0; i < alphabet.length(); ++i)  
+          if (s.indexOf(alphabet.charAt(i)) == -1)  
+             return false;  
+  
+       return true;  
+    }  
+  
+  
+    public static boolean isPangramEN(String s)  
+    {  
+       return isPangram(s.toLowerCase(), LETTERS_EN);  
+    }  
+  
+    public static boolean isPangramTR(String s)  
+    {  
+       return isPangram(s.toLowerCase(), LETTERS_TR);  
+    }  
+  
+  
+    public static String join(ArrayList texts, String delimiter)  
+    {  
+       StringBuilder sb = new StringBuilder();  
+  
+       for (Object o : texts) {  
+          String s = (String)o;  
+  
+          sb.append(s).append(delimiter);  
+       }  
+  
+       return sb.substring(0, sb.length() - delimiter.length());  
+    }  
+  
+    public static String join(ArrayList texts, char delimiter)  
+    {  
+       return join(texts, String.valueOf(delimiter));  
+    }  
+  
+    public static String join(String [] s, String delimiter)  
+    {  
+       StringBuilder sb = new StringBuilder();  
+  
+       for (String str : s)  
+          sb.append(str).append(delimiter);  
+  
+       return sb.substring(0, sb.length() - delimiter.length());  
+    }  
+  
+    public static String join(String [] s, char delimiter)  
+    {  
+       return join(s, String.valueOf(delimiter));  
+    }  
+  
+    public static String padLeading(String s, int n, char ch)  
+    {  
+       int len = s.length();  
+  
+       return len < n ? String.valueOf(ch).repeat(n - len) + s : s;  
+    }  
+  
+    public static String padLeading(String s, int n)  
+    {  
+       return padLeading(s, n, ' ');  
+    }  
+  
+    public static String padTrailing(String s, int n, char ch)  
+    {  
+       int len = s.length();  
+  
+       return len < n ? s + String.valueOf(ch).repeat(n - len) : s;  
+    }  
+  
+    public static String padTrailing(String s, int n)  
+    {  
+       return padTrailing(s, n, ' ');  
+    }  
+  
+    public static String reverse(String s)  
+    {  
+       return new StringBuilder(s).reverse().toString();  
+    }  
+  
+    public static String [] split(String s, String delimiters)  
+    {  
+       return split(s, delimiters, true);  
+    }  
+  
+    public static String [] split(String s, String delimiters, boolean removeEmptyEntries)  
+    {  
+       StringBuilder pattern = new StringBuilder("[");  
+  
+       for (int i = 0; i < delimiters.length(); ++i) {  
+          char c = delimiters.charAt(i);  
+  
+          if (c == '[' || c == ']')  
+             pattern.append('\\');  
+  
+          pattern.append(c);  
+       }  
+  
+       pattern.append(']');  
+  
+       if (removeEmptyEntries)  
+          pattern.append("+");  
+  
+       return s.split(pattern.toString());  
+    }  
+}
+```
+
+```java
+package org.csystem.util.numeric;  
+  
+public final class NumberUtil {  
+    private NumberUtil()  
+    {  
+    }  
+  
+    private static final String ZERO_TR;  
+    private static final String MINUS_TR;  
+    private static final String [] ONES_TR;  
+    private static final String [] TENS_TR;  
+    private static final String [] NUMBER_UNITS_TR;  
+      
+    private static final String ZERO_EN;  
+    private static final String MINUS_EN;  
+    private static final String [] ONES_EN;  
+    private static final String [] TENS_EN;  
+    private static final String [] NUMBER_UNITS_EN;  
+  
+    static {  
+       ZERO_TR = "sıfır";  
+       MINUS_TR = "eksi";  
+       ONES_TR = new String[]{"", "bir", "iki", "üç", "dört", "beş", "altı", "yedi", "sekiz", "dokuz"};  
+       TENS_TR = new String[]{"", "on", "yirmi", "otuz", "kırk", "elli", "altmış", "yetmiş", "seksen", "doksan"};  
+       NUMBER_UNITS_TR = new String[]{"kentilyon", "katrilyon", "trilyon", "milyar", "milyon", "bin", ""};  
+  
+       ZERO_EN = "zero";  
+       MINUS_EN= "minus";  
+       ONES_EN = new String[]{"", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};  
+       TENS_EN = new String[] {"", "ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};  
+       NUMBER_UNITS_EN = new String[] {"quintillion", "quadrillion", "trillion", "billion", "million", "thousand", ""};  
+    }  
+  
+    private static int [] getDigits(long a, int n)  
+    {  
+        int divider = (int)Math.pow(10, n);  
+       a = Math.abs(a);  
+        int [] digits = new int[a == 0 ? 1 : (int)(Math.log10(a) / n) + 1];  
+  
+        for (int i = digits.length - 1; i >= 0; digits[i--] = (int)(a % divider), a /= divider)  
+            ;  
+  
+        return digits;  
+    }  
+  
+    private static String numToStr3DigitsTR(int val)  
+    {  
+       StringBuilder sb = new StringBuilder();  
+  
+       int a = val / 100;  
+       int b = val / 10 % 10;  
+       int c = val % 10;  
+  
+       if (a != 0) {  
+          if (a != 1)  
+             sb.append(ONES_TR[a]).append(" ");  
+          sb.append("yüz ");  
+       }  
+  
+       if (b != 0)  
+          sb.append(TENS_TR[b]).append(" ");  
+  
+       if (c != 0)  
+          sb.append(ONES_TR[c]).append(" ");  
+  
+       return sb.isEmpty() ? "" : sb.substring(0, sb.length() - 1);  
+    }  
+  
+    private static String numToStr3DigitsEN(int val)  
+    {  
+       StringBuilder sb = new StringBuilder();  
+  
+       int a = val / 100;  
+       int b = val / 10 % 10;  
+       int c = val % 10;  
+  
+       if (a != 0)  
+          sb.append(ONES_EN[a]).append(" ").append("hundred ");  
+  
+       if (b != 0)  
+          sb.append(TENS_EN[b]).append(" ");  
+  
+       if (c != 0)  
+          sb.append(ONES_EN[c]).append(" ");  
+  
+       return sb.isEmpty() ? "" : sb.substring(0, sb.length() - 1);  
+    }  
+  
+    public static int countDigits(long a)  
+    {  
+       return a != 0 ? (int)Math.log10(Math.abs(a)) + 1 : 1;  
+    }  
+  
+    public static long factorial(int n)  
+    {  
+       long result = 1;  
+  
+       for (long i = 2; i <= n; ++i)  
+          result *= i;  
+  
+       return result;  
+    }  
+  
+    public static int fibonacciNumber(int n)  
+    {  
+       if (n <= 2)  
+          return n - 1;  
+  
+       int prev1 = 1, prev2 = 0, result = prev1 + prev2;  
+  
+       for (int i = 3; i < n; ++i) {  
+          prev2 = prev1;  
+          prev1 = result;  
+          result = prev1 + prev2;  
+       }  
+  
+       return result;  
+    }  
+  
+    public static int [] getDigits(long a)  
+    {  
+       return getDigits(a, 1);  
+    }  
+  
+    public static int [] getDigitsInThrees(long a)  
+    {  
+        return getDigits(a, 3);  
+    }  
+  
+    public static int [] getDigitsInTwos(long a)  
+    {  
+        return getDigits(a, 2);  
+    }  
+  
+    public static int getDigitsPowSum(int a)  
+    {  
+       int result = 0;  
+       int n = countDigits(a);  
+  
+       while (a != 0) {  
+          result += (int)Math.pow(a % 10, n);  
+          a /= 10;  
+       }  
+  
+       return result;  
+    }  
+  
+    public static boolean isArmstrong(int a)  
+    {  
+       return a >= 0 && getDigitsPowSum(a) == a;  
+    }  
+  
+    public static boolean isEven(int a)  
+    {  
+       return a % 2 == 0;  
+    }  
+  
+    public static boolean isOdd(int a)  
+    {  
+       return !isEven(a);  
+    }  
+  
+    public static boolean isPrime(long a)  
+    {  
+       if (a <= 1)  
+          return false;  
+  
+       if (a % 2 == 0)  
+          return a == 2;  
+  
+       if (a % 3 == 0)  
+          return a == 3;  
+  
+       if (a % 5 == 0)  
+          return a == 5;  
+  
+       if (a % 7 == 0)  
+          return a == 7;  
+  
+       for (long i = 11; i * i <= a; i += 2)  
+          if (a % i == 0)  
+             return false;  
+  
+       return true;  
+    }  
+  
+    public static long nextClosestPrime(long a)  
+    {  
+       if (a < 2)  
+          return 2;  
+  
+       while (!isPrime(++a))  
+          ;  
+  
+       return a;  
+    }  
+  
+    public static int nextFibonacciNumber(int val)  
+    {  
+       if (val < 0)  
+          return 0;  
+  
+       int prev1 = 1, prev2 = 0, next = prev1 + prev2;  
+  
+       while (next <= val) {  
+          prev2 = prev1;  
+          prev1 = next;  
+          next = prev1 + prev2;  
+       }  
+  
+       return next;  
+    }  
+  
+    public static long nthPrime(int n)  
+    {  
+       long result = 2;  
+       int count = 0;  
+  
+       for (long i = 2; count < n; ++i)  
+          if (isPrime(i)) {  
+             ++count;  
+             result = i;  
+          }  
+       return result;  
+    }  
+  
+    public static String numToStrTR(long a)  
+    {  
+       if (a == 0)  
+          return ZERO_TR;  
+  
+       int [] threes = getDigitsInThrees(a);  
+       StringBuilder sb = new StringBuilder();  
+       int idx = NUMBER_UNITS_TR.length - 1;  
+  
+       for (int i = threes.length - 1; i >= 0; --i) {  
+          if (threes[i] != 0)  
+             sb.insert(0, "%s%s ".formatted(idx == NUMBER_UNITS_TR.length - 2 && threes[i] == 1 ? "" : numToStr3DigitsTR(threes[i]) + " ", NUMBER_UNITS_TR[idx]));  
+  
+          --idx;  
+       }  
+  
+       return "%s%s".formatted(a < 0 ? MINUS_TR + " " : "", sb.substring(0, sb.length() - 2));  
+    }  
+  
+    public static String numToStrEN(long a)  
+    {  
+       if (a == 0)  
+          return ZERO_EN;  
+  
+       int [] threes = getDigitsInThrees(a);  
+       StringBuilder sb = new StringBuilder();  
+       int idx = NUMBER_UNITS_EN.length - 1;  
+  
+       for (int i = threes.length - 1; i >= 0; --i) {  
+          if (threes[i] != 0)  
+             sb.insert(0, "%s %s ".formatted(numToStr3DigitsEN(threes[i]), NUMBER_UNITS_EN[idx]));  
+  
+          --idx;  
+       }  
+  
+       return "%s%s".formatted(a < 0 ? MINUS_EN + " " : "", sb.substring(0, sb.length() - 2));  
+    }  
+  
+    public static int reverse(int val)  
+    {  
+       int result = 0;  
+  
+       while (val != 0) {  
+          result = result * 10 + val % 10;  
+          val /= 10;  
+       }  
+  
+       return result;  
+    }  
+  
+    public static int sumDigits(int val)  
+    {  
+       int total = 0;  
+  
+       while (val != 0) {  
+          total += val % 10;  
+          val /= 10;  
+       }  
+  
+       return Math.abs(total);  
+    }  
+}
+```
+
+>Sınıfın non-static initializer'ı sınıfın bir ctor'undan önce çağrılır. Yani, non-static initializer kodları adeta derleyici tarafından her bir ctor'un başına gizlice yerleştirilir. Eğer non-static initializer birden fazla ise yine yukarıdan aşağıya yazılma sırasıyla çağrılır. Pratikte 1 tanesi yeterli olur. non-static initializer static initializer'dan daha az kullanılır. non-static initializer non-static metot gibidir. Yani sınıfın tüm elemanlarına doğrudan erişilebilir.
+
+```java
+package org.csystem.app;  
+  
+import org.csystem.util.console.Console;  
+  
+class App {  
+    public static void main(String[] args)  
+    {  
+        Sample s1 = new Sample();  
+        Console.writeLine("-------------------------------------");  
+        Sample s2 = new Sample(10);  
+    }  
+}  
+  
+class Sample {  
+    {  
+        Console.writeLine("static initializer1");  
+    }  
+  
+    public Sample()  
+    {  
+        Console.writeLine("I am a default ctor");  
+    }  
+  
+    public Sample(int a)  
+    {  
+        Console.writeLine("I am a ctor with parameter type int");  
+    }  
+  
+    {  
+        Console.writeLine("static initializer2");  
+    }  
+      
+    {  
+        Console.writeLine("static initializer3");  
+    }  
+}
+```
+
+>Aşağıdaki demo örneği inceleyiniz
+
+```java
+package org.csystem.app;  
+  
+import org.csystem.util.console.Console;  
+  
+class App {  
+    public static void main(String[] args)  
+    {  
+        Sample s2 = new Sample(10);  
+    }  
+}  
+  
+class Sample {  
+    {  
+        Console.writeLine("non-static initializer");  
+    }  
+  
+    public Sample()  
+    {  
+        Console.writeLine("I am a default ctor");  
+    }  
+  
+    public Sample(int a)  
+    {  
+        this();  
+        Console.writeLine("I am a ctor with parameter type int");  
+    }  
+}
+```
+
+###### 3 Nisan 2025
+##### Exception İşlemleri
+
+>Anımsanacağı gibi programın çalışma zamanında oluşan, genel olarak hatalı durumlara **exception** veya **runtime error** denir. Bir exception oluştuğunda akışın oluşan exception'a göre yönlendirilmesine **exception handling** denir. Exception mekanizmasının sağladığı avantajlar şunlardır:
+>- Programın daha az kontrollü bir biçimde oluşturulmasını sağlamak ve okunabilirliği artırmak.
+>- Kod ile hata ele alımını biribirinden ayırmak.
+>- Tam bir hata kontrolü sağlamak.
+>- İç içe metot çağırmalarında iç metotta oluşan hataların daha kolay ele alınmasını sağlamak.
+>- Bir hata oluştuğunda hatanın nedenini de hatayı ele alacak kişiye bildirmek.
+>
+>Örneğin, konum bilgisi veren bir uygulamanın, konum bilgisi elde edilemediğinde oluşan exception'a göre kullanıcıyı bilgilendirmesi exception handling yapılarak gerçekleştirilebilir. 
+>
+>Java'da exception işlemleri 5 tane anahtar sözcük ile gerçekleştirilir: **throw, try, catch, finally, throws.**
+>
+>Akış içerisinde bir exception oluşturulması (fırlatılması) için **throw deyimi (throw statement)** kullanılır. throw deyiminin genel biçimi şu şekildedir:
+
+```java
+throw <referans>;
+```
+
+>Burada referansa ilişkin sınıfın **Throwable** sınıfından doğrudan ya da dolaylı olarak türetilmiş bir sınıf türünden olması gerekir. Aksi durumda error oluşur. Java'da `Throwable`sınıfından doğrudan ya da dolaylı olarak türetilmiş olan sınıflara genel olarak **exception sınıfları (exception classes)** ya da **throwable classes** denilmektedir. Throwable sınıfından **Exception** ve **Error** isimli iki sınıf türetilmiştir. Ayrıca `Exception`sınıfından **RuntimeException** isimli bir sınıf türetilmiştir. Bu 4 sınıf Java'da temel exception sınıflarıdır. Bu 4 sınıfın önemi ayrıca ele alınacaktır. Pratikte `Throwable`sınıfından doğrudan türetme yapılmaz. Türetme tipik olarak, doğrudan ya da dolaylı olarak ya `Exception` sınıfından, ya `RuntimeException` sınıfından ya da `Error` sınıfından yapılır. Bu 4 tane sınıfa ilişkin sınıf şemasının genel biçimi aşağıdaki gibidir:
+
+![BasicExceptionClasses](./media/BasicExceptionClasses.png)
+**Anahtar Notlar:** Exception ve RuntimeException sınıflarından doğrudan ya da dolaylı olarak türetilen sınıfların isimlendirmesinde bir convention olarak **Exception** kelimesi son kelime olarak kullanılır, Error sınıfından doğrudan ya da dolaylı olarak türetilen sınıfların isimlendirmesinde bir convention olarak **Error** kelimesi son kelime olarak kullanılır. Programcı da kendi exception sınıfları için bu convention'a uymalıdır.
+
+>Aşağıdaki demo örnekte NegativeException sınıfı Throwable sınıfından doğrudan ya da dolaylı olarak türetilmediği için yani bir exception olmadığı için error oluşur. 
+
+```java
+class MathUtil {  
+    private static final double DELTA = 0.000001;  
+    public static double log10(double a)  
+    {  
+        if (a < 0)  
+            throw new NegativeException(); //error  
+                //...  
+    }  
+}  
+  
+class NegativeException {  
+    //...  
+}
+```
+
+>Akış throw deyimine geldiğinde metodu terkeder. Bu terkediş return deyimi ya da void bir metottaki gibi metodun sonlaması biçiminde değildir. Yani metot normal bir biçimde sonlanmamıştır. 
+
+>Aşağıdaki demo örneği çeşitli değerler ile çalıştırıp sonuçları gözlemleyiniz
+
+```java
+package org.csystem.app;  
+  
+import java.util.Scanner;  
+  
+class App {  
+    public static void main(String[] args)  
+    {  
+        Scanner kb = new Scanner(System.in);  
+  
+        System.out.print("Input a number:");  
+        double a = kb.nextInt();  
+        double result;  
+  
+        result = MathUtil.log10(a);  
+  
+        System.out.printf("log10(%f) = %f%n", a, result);  
+    }  
+}  
+  
+class MathUtil {  
+    public static double log10(double a)  
+    {  
+        if (a < 0)  
+            throw new NegativeException();  
+  
+        if (a == 0)  
+            throw new ZeroException();  
+  
+        return Math.log10(a);  
+    }  
+}  
+  
+class ZeroException extends RuntimeException {  
+    //...  
+}  
+  
+  
+class NegativeException extends RuntimeException {  
+    //...  
+}
+```
+
+>Bir metodun hangi durumlarda hangi exception'ı fırlatacağı dokümantasyonundan anlaşılabilir. Bu ya açıkça belirtilir. Ya da akış içerisinde çağırdığı metoda ilişkin exception fırlattığına yönelik betimleme yapılır.
+>
+>Akış exception bakımından ele alınacaksa (handling) **try deyimi (try statement)** kodları içerisinde yazılmalıdır. try deyimi tek başına yazılamaz. try deyimine ilişkin bloğu bir **catch bloğu ya da blokları** VEYA **catch bloğu ya da blokları ile bir finally bloğu** VEYA **yalnızca bir final bloğu** takip etmelidir. try deyimi takip eden blokları ile birlikte tek bir deyimdir. Takip eden bloklar ile try bloğu arasında başka bir deyim yazılamaz. 
+>
+>catch bloğu parantezi içerisinde bir referans değişken bildirimi yapılır. Bu referansa **catch parametresi (catch parameter)** da denilmektedir. Bu parametrenin türü bir exception sınıfı türünden olmalıdır. Aksi durumda error oluşur. catch parametre değişkenin faaliyet alanı bildirildiği catch bloğu kadardır. catch parametre değişkeni catch bloğu içerisinde kullanılmayacaksa tipik olarak `ignore` yada `ignored` gibi isimler verilerek bildirilir. Hatta bazı static kod analizi araçları bu tip isimler verilmezse default olarak uyarı mesajı verirler. 
+>
+>try bloğu içerisinde bir exception fırlatıldığında akış try bloğunu bir daha geri dönmemek üzere (non-resumptive)  terkeder. Bu durumda try deyimine ilişkin ilk catch bloğuna akış dallanır. catch blokları yukarıdan aşağıya ilk uygun catch bloğu bulununcaya kadar taranır. Uygun catch bloğu bulunursa çalıştırılır ve tüm diğer catch blokları atlanarak akış devam eder. Uygun catch bloğu fırlatılan exception nesnesine ilişkin referansın atanabildiği parametre türüne sahip ilk catch bloğudur. Bu durumda ya fırlatılan exception sınıfı ile aynı türden veya onun doğrudan ya da dolaylı taban sınıfı türünden (bu durumda upcasting olur) parametre türüne sahip ilk catch bloğudur. Uygun catch bloğu hiç bulunamazsa akış (thread) `abnormal` bir biçimde sonlanır. 
+
+>Aşağıdaki demo örneği çeşitli değerler ile çalıştırıp sonuçları gözlemleyiniz.
+
+```java
+package org.csystem.app;  
+  
+import java.util.Scanner;  
+  
+class App {  
+    public static void main(String[] args)  
+    {  
+        try {  
+            Scanner kb = new Scanner(System.in);  
+  
+            System.out.print("Input a number:");  
+            double a = kb.nextInt();  
+            double result;  
+            result = MathUtil.log10(a);  
+  
+            System.out.printf("log10(%f) = %f%n", a, result);  
+        }  
+        catch (ZeroException ignore) {  
+            System.out.println("Zero value is invalid for logarithm");  
+        }  
+        catch (NegativeException ignore) {  
+            System.out.println("Negative value is invalid for logarithm");  
+        }  
+  
+        System.out.println("main ends!...");  
+    }  
+}  
+  
+class MathUtil {  
+    public static double log10(double a)  
+    {  
+        if (a < 0)  
+            throw new NegativeException();  
+  
+        if (a == 0)  
+            throw new ZeroException();  
+  
+        return Math.log10(a);  
+    }  
+}  
+  
+class ZeroException extends RuntimeException {  
+    //...  
+}  
+  
+  
+class NegativeException extends RuntimeException {  
+    //...  
+}
+```
+
+
+>Aşağıdaki demo örneği çeşitli değerler ile çalıştırıp sonuçları gözlemleyiniz. Örnekte `ZeroException` ve `NegativeException` fırlatıldığında taban sınıf parametreli catch bloğu ile yakalandığına dikkat ediniz
+
+```java
+package org.csystem.app;  
+  
+import java.util.InputMismatchException;  
+import java.util.Scanner;  
+  
+class App {  
+    public static void main(String[] args)  
+    {  
+        try {  
+            Scanner kb = new Scanner(System.in);  
+  
+            System.out.print("Input a number:");  
+            double a = kb.nextInt();  
+            double result;  
+            result = MathUtil.log10(a);  
+  
+            System.out.printf("log10(%f) = %f%n", a, result);  
+        }  
+        catch (MathException ignore) {  
+            System.out.println("Invalid input for logarithm");  
+        }  
+        catch (InputMismatchException ignore) {  
+            System.out.println("Invalid number");  
+        }  
+  
+        System.out.println("main ends!...");  
+    }  
+}  
+  
+class MathUtil {  
+    public static double log10(double a)  
+    {  
+        if (a < 0)  
+            throw new NegativeException();  
+  
+        if (a == 0)  
+            throw new ZeroException();  
+  
+        return Math.log10(a);  
+    }  
+}  
+  
+class ZeroException extends MathException {  
+    //...  
+}  
+  
+  
+class NegativeException extends MathException {  
+    //...  
+}  
+  
+class MathException extends RuntimeException {  
+    //...  
+}
+```
+
+###### 8 Nisan 2025
+
+>Taban sınıf parametreli catch bloğu ile türemiş sınıf parametreli catch bloğu aynı try deyiminde bulunacaksa, catch bloklarına yukarıdan aşağıya doğru bakıldığı için türemiş sınıf parametreli catch bloğunun taban sınıf parametreli catch bloğundan sonra olmasının bir anlamı olmayacaktır. Bu durumda derleyici error verecektir. Türemiş sınıf parametreli catch bloğunun taban sınıf parametreli catch bloğundan önce yazılması gerekir. Tüm exception sınıfları doğrudan ya da dolaylı olarak `Throwable` sınıfından türetilmiş olduğuna göre Throwable parametreli catch bloğu ile tüm exception'lar yakalanabilir. Bu durumda birden fazla catch bloğu varsa, Throwable parametreli catch bloğu en son catch bloğu olarak o try deyiminde yazımalıdır. Aralarında türetme ilişkisi olmayan sınıflar türünden parametreli catch blokları bir try deyiminde istenildiği sırada yazılabilir.
+
+>Aşağıdaki demo örnekte ZeroException zaten MathException parametreli catch bloğu ile yakalanabileceğinden error oluşur
+
+```java
+package org.csystem.app;  
+  
+import java.util.InputMismatchException;  
+import java.util.Scanner;  
+  
+class App {  
+    public static void main(String[] args)  
+    {  
+        try {  
+            Scanner kb = new Scanner(System.in);  
+  
+            System.out.print("Input a number:");  
+            double a = kb.nextInt();  
+            double result;  
+            result = MathUtil.log10(a);  
+  
+            System.out.printf("log10(%f) = %f%n", a, result);  
+        }  
+        catch (MathException ignore) {  
+            System.out.println("Invalid input for logarithm");  
+        }  
+        catch (ZeroException ignore) { //error  
+            System.out.println("Invalid input for logarithm");  
+        }  
+        catch (InputMismatchException ignore) {  
+            System.out.println("Invalid number");  
+        }  
+  
+        System.out.println("main ends!...");  
+    }  
+}  
+  
+class MathUtil {  
+    public static double log10(double a)  
+    {  
+        if (a < 0)  
+            throw new NegativeException();  
+  
+        if (a == 0)  
+            throw new ZeroException();  
+  
+        return Math.log10(a);  
+    }  
+}  
+  
+class ZeroException extends MathException {  
+    //...  
+}  
+  
+  
+class NegativeException extends MathException {  
+    //...  
+}  
+  
+class MathException extends RuntimeException {  
+    //...  
+}
+```
+
+
+>Yukarıdaki demo örnek aşağıdaki gibi yapılabilir
+
+```java
+package org.csystem.app;  
+  
+import java.util.InputMismatchException;  
+import java.util.Scanner;  
+  
+class App {  
+    public static void main(String[] args)  
+    {  
+        try {  
+            Scanner kb = new Scanner(System.in);  
+  
+            System.out.print("Input a number:");  
+            double a = kb.nextInt();  
+            double result;  
+            result = MathUtil.log10(a);  
+  
+            System.out.printf("log10(%f) = %f%n", a, result);  
+        }  
+        catch (ZeroException ignore) {  
+            System.out.println("Zero not allowed");;  
+        }  
+        catch (MathException ignore) {  
+            System.out.println("Invalid input for logarithm");  
+        }  
+        catch (InputMismatchException ignore) {  
+            System.out.println("Invalid number");  
+        }  
+  
+        System.out.println("main ends!...");  
+    }  
+}  
+  
+class MathUtil {  
+    public static double log10(double a)  
+    {  
+        if (a < 0)  
+            throw new NegativeException();  
+  
+        if (a == 0)  
+            throw new ZeroException();  
+  
+        return Math.log10(a);  
+    }  
+}  
+  
+class ZeroException extends MathException {  
+    //...  
+}  
+  
+  
+class NegativeException extends MathException {  
+    //...  
+}  
+  
+class MathException extends RuntimeException {  
+    //...  
+}
+```
+
+>Aşağıdaki demo örnekte Throwable parametreli catch bloğu ile NegativeException dışında kalan tüm exception'lar yakalanabilmektedir.
+
+```java
+package org.csystem.app;  
+  
+import java.util.Scanner;  
+  
+class App {  
+    public static void main(String[] args)  
+    {  
+        try {  
+            Scanner kb = new Scanner(System.in);  
+  
+            System.out.print("Input a number:");  
+            double a = kb.nextInt();  
+            double result;  
+            result = MathUtil.log10(a);  
+  
+            System.out.printf("log10(%f) = %f%n", a, result);  
+        }  
+        catch (NegativeException ignore) {  
+            System.out.println("Negative value not allowed");  
+        }  
+        catch (Throwable ignore) {  
+            System.out.println("Exception occurred");  
+        }  
+  
+        System.out.println("main ends!...");  
+    }  
+}  
+  
+class MathUtil {  
+    public static double log10(double a)  
+    {  
+        if (a < 0)  
+            throw new NegativeException();  
+  
+        if (a == 0)  
+            throw new ZeroException();  
+  
+        return Math.log10(a);  
+    }  
+}  
+  
+class ZeroException extends MathException {  
+    //...  
+}  
+  
+  
+class NegativeException extends MathException {  
+    //...  
+}  
+  
+class MathException extends RuntimeException {  
+    //...  
+}
+```
+
+>Bazen bir kod birden fazla try deyimi içerisinde olabilir. Bu durumda bir try deyimi başka bir try deyiminin try bloğu içerisinde yazılmış olur. Şüphesiz bu durum doğrudan programcı tarafından yazılmayabilir. Ancak programcının bir try bloğu içerisinde çağırdığı metot içerisinde de bir try deyimi olur. Bu durumda içteki try bloğunda bir exception oluştuğunda o try bloğuna ilişkin catch bloklarına bakılır. Uygun catch bloğu bulunursa akış normal bir biçimde yakalayan bloğu çalıştırılarak devam eder. Dıştaki try deyiminin catch bloklarına bakılmaz. Uygun catch bloğu bulunamazsa dıştaki try deyiminin catch bloklarına bakılır. Bu işlem uygun catch bloğu bulununcaya ya da hiç bulunamayıncaya kadar devam eder. Hiç bulunamazsa akış abnormal bir biçimde sonlanır.
+
+>Aşağıdaki demo örneği çeşitli değerler ile çalıştırıp sonuçları gözlemleyiniz
+
+```java
+package org.csystem.app;  
+  
+import java.util.Scanner;  
+  
+class App {  
+    public static void main(String[] args)  
+    {  
+        try {  
+            Util.doWork();  
+        }  
+        catch (ZeroException ignore) {  
+            System.out.println("Zero not allowed");;  
+        }  
+  
+        System.out.println("main ends!...");  
+    }  
+}  
+  
+class Util {  
+    public static void doWork()  
+    {  
+        try {  
+            Scanner kb = new Scanner(System.in);  
+  
+            System.out.print("Input a number:");  
+            double a = kb.nextInt();  
+            double result;  
+            result = MathUtil.log10(a);  
+  
+            System.out.printf("log10(%f) = %f%n", a, result);  
+        }  
+        catch (NegativeException ignore) {  
+            System.out.println("Negative value not allowed");  
+        }  
+  
+        System.out.println("doWork ends!...");  
+    }  
+}  
+  
+class MathUtil {  
+    public static double log10(double a)  
+    {  
+        if (a < 0)  
+            throw new NegativeException();  
+  
+        if (a == 0)  
+            throw new ZeroException();  
+  
+        return Math.log10(a);  
+    }  
+}  
+  
+class ZeroException extends RuntimeException {  
+    //...  
+}  
+  
+  
+class NegativeException extends RuntimeException {  
+    //...  
+}
+```
+
+>Yukarıdaki doWork metodu dökumante edilirken NegativeException fırlatıldığını ve yakalandığını belirtmek durumunda değildir. Ancak fırlattığı exception'ları iyi bir dökumantasyonsa belirtir. 
+>
+>Bazen bir metot, bir exception oluştuğunda onu handle eder ancak, metodun müşterisi olan (yani metodu çağıran) koda aynı nesneyi fırlatmak ister. Bu durumda yakalanan catch bloğunun sonunda aynı catch parametresi ile throw deyimi yazılır. Bu işleme **yeniden fırlatma (rethrow)** denilmektedir. Bu, aslında bir araya girme işlemidir. Rethrow yapan metot dökumantasyonunda artık yakalayıp fırlattığı exception'ı da fırlattığını belirtecektir. Ancak bunu yeniden fırlatıp fırlatmadığını belirtmeyebilir. 
+
+>Aşağıdaki demo örneği çeşitli değerlerle çalıştırıp sonuçları sonuçları gözlemleyiniz
+
+```java
+package org.csystem.app;  
+  
+import java.util.Scanner;  
+  
+class App {  
+    public static void main(String[] args)  
+    {  
+        try {  
+            Util.doWork();  
+        }  
+        catch (ZeroException ignore) {  
+            System.out.println("Zero not allowed"); 
+        }  
+        catch (NegativeException ignore) {  
+            System.out.println("You can not enter negative value");
+        }  
+  
+        System.out.println("main ends!...");  
+    }  
+}  
+  
+class Util {  
+    public static void doWork()  
+    {  
+        try {  
+            Scanner kb = new Scanner(System.in);  
+  
+            System.out.print("Input a number:");  
+            double a = kb.nextInt();  
+            double result;  
+            result = MathUtil.log10(a);  
+  
+            System.out.printf("log10(%f) = %f%n", a, result);  
+        }  
+        catch (NegativeException ex) {  
+            System.out.println("Negative value not allowed");  
+            throw ex; //rethrow  
+        }  
+  
+        System.out.println("doWork ends!...");  
+    }  
+}  
+  
+class MathUtil {  
+    public static double log10(double a)  
+    {  
+        if (a < 0)  
+            throw new NegativeException();  
+  
+        if (a == 0)  
+            throw new ZeroException();  
+  
+        return Math.log10(a);  
+    }  
+}  
+  
+class ZeroException extends RuntimeException {  
+    //...  
+}  
+  
+  
+class NegativeException extends RuntimeException {  
+    //...  
+}
+```
+
+###### 10 Nisan 2025
+
+>`finally` bloğu akış try deyiminden nasıl çıkarsa çıksın (exception oluşmadan veya exception oluşup yakalanarak veya exception oluşup yakalanmayarak) çalıştırılır. try deyiminde finally bloğu olmak zorunda değildir. Eğer catch blokları varsa tüm catch bloklarının sonunda yazılmalıdır. finally bloğunda tipik olarak exception oluşsa da oluşmasa da yapılacak işlemler yazılır. Örneğin, dosyanın verileri ile yapan bir akışın önce dosyayı açması gerekir. İşlemler bittikten sonra dosyanın kapatılması gerekir. Dosya açıldıktan sonra yapılacak olan işlemlerin sonunda veya işlemler sırasında oluşabilecek exception'lar durumunda da açılmış olan dosyanın kapatılması kodları tipik olarak finally bloğunda yazılır.
+
+>Aşağıdaki demo örneği çeşitli değerler ile çalıştırıp sonuçları gözlemleyiniz
+
+```java
+package org.csystem.app;  
+  
+import java.util.Scanner;  
+  
+class App {  
+    public static void main(String[] args)  
+    {  
+        try {  
+            Util.doWork();  
+        }  
+        catch (ZeroException ignore) {  
+            System.out.println("Zero not allowed"); 
+        }  
+        finally {  
+            System.out.println("finally in main");  
+        }  
+  
+        System.out.println("main ends!...");  
+    }  
+}  
+  
+class Util {  
+    public static void doWork()  
+    {  
+        try {  
+            Scanner kb = new Scanner(System.in);  
+  
+            System.out.print("Input a number:");  
+            double a = kb.nextInt();  
+            double result;  
+            result = MathUtil.log10(a);  
+  
+            System.out.printf("log10(%f) = %f%n", a, result);  
+        }  
+        catch (NegativeException ex) {  
+            System.out.println("Negative value not allowed");;  
+        }  
+        finally {  
+            System.out.println("finally in doWork");  
+        }  
+  
+        System.out.println("doWork ends!...");  
+    }  
+}  
+  
+class MathUtil {  
+    public static double log10(double a)  
+    {  
+        if (a < 0)  
+            throw new NegativeException();  
+  
+        if (a == 0)  
+            throw new ZeroException();  
+  
+        return Math.log10(a);  
+    }  
+}  
+  
+class ZeroException extends RuntimeException {  
+    //...  
+}  
+  
+  
+class NegativeException extends RuntimeException {  
+    //...  
+}
+```
+
+>try deyiminde, try bloğunu yalnızca finally bloğu takip edebilir. Bu yapıya `try-finally`bloğu da denilmektedir. Tipik olarak exception oluşsa da oluşmasa da yapılacak ortak işlemlerin exception yakalanmadan yapılması için kullanılır.
+
+>Aşağıdaki demo örneği çeşitli değerler ile çalıştırıp sonuçları gözlemleyiniz
+
+```java
+package org.csystem.app;  
+  
+import java.util.InputMismatchException;  
+import java.util.Scanner;  
+  
+class App {  
+    public static void main(String[] args)  
+    {  
+        try {  
+            Util.doWork();  
+        }  
+        catch (ZeroException ignore) {  
+            System.out.println("Zero not allowed");;  
+        }  
+        catch (NegativeException ex) {  
+            System.out.println("Negative value not allowed");;  
+        }  
+        catch (InputMismatchException ignore) {  
+            System.out.println("Invalid numeric value");  
+        }  
+        finally {  
+            System.out.println("finally in main");  
+        }  
+  
+        System.out.println("main ends!...");  
+    }  
+}  
+  
+class Util {  
+    public static void doWork()  
+    {  
+        try {  
+            Scanner kb = new Scanner(System.in);  
+  
+            System.out.print("Input a number:");  
+            double a = kb.nextInt();  
+            double result;  
+            result = MathUtil.log10(a);  
+  
+            System.out.printf("log10(%f) = %f%n", a, result);  
+        }  
+        finally {  
+            System.out.println("finally in doWork");  
+        }  
+  
+        System.out.println("doWork ends!...");  
+    }  
+}  
+  
+class MathUtil {  
+    public static double log10(double a)  
+    {  
+        if (a < 0)  
+            throw new NegativeException();  
+  
+        if (a == 0)  
+            throw new ZeroException();  
+  
+        return Math.log10(a);  
+    }  
+}  
+  
+class ZeroException extends RuntimeException {  
+    //...  
+}  
+  
+  
+class NegativeException extends RuntimeException {  
+    //...  
+}
+```
+
+>**Soru:** Aşağıdaki programın ekran çıktısını yazınız
+
+```java
+package org.csystem.app;  
+  
+import org.csystem.util.console.Console;  
+  
+class App {  
+    public static void main(String[] args)  
+    {  
+        Console.writeLine(Sample.doWork("foo"));
+    }  
+}  
+  
+class Sample {  
+    public static StringBuilder doWork(String s)  
+    {  
+        StringBuilder sb = new StringBuilder(s);  
+  
+        try {  
+            return sb.append("return");  
+        }  
+        finally {  
+            sb.append("finally");  
+        }  
+    }  
+}
+```
+
+>**Ekran Çıktısı:** fooreturnfinally
+
+>Aşağıdaki `Console` sınıfının kodlarını inceleyiniz
+
+```java
+package org.csystem.util.console;  
+  
+import java.util.Scanner;  
+  
+public class Console {  
+    private Console()  
+    {  
+    }  
+  
+    private static final Scanner KB;  
+  
+    static {  
+        KB = new Scanner(System.in);  
+    }  
+  
+    public static int readInt()  
+    {  
+        return readInt("");  
+    }  
+  
+    public static int readInt(String prompt)  
+    {  
+        return readInt(prompt, "");  
+    }  
+  
+    public static int readInt(String prompt, String errorPrompt)  
+    {  
+        while (true) {  
+            try {  
+                System.out.print(prompt);  
+  
+                return Integer.parseInt(KB.nextLine());  
+            }  
+            catch (NumberFormatException ignore) {  
+                System.out.print(errorPrompt);  
+            }  
+        }  
+    }  
+  
+    public static long readLong()  
+    {  
+        return readLong("");  
+    }  
+  
+    public static long readLong(String prompt)  
+    {  
+        return readLong(prompt, "");  
+    }  
+  
+    public static long readLong(String prompt, String errorPrompt)  
+    {  
+        while (true) {  
+            try {  
+                System.out.print(prompt);  
+  
+                return Long.parseLong(KB.nextLine());  
+            }  
+            catch (NumberFormatException ignore) {  
+                System.out.print(errorPrompt);  
+            }  
+        }  
+    }  
+  
+    public static double readDouble()  
+    {  
+        return readDouble("");  
+    }  
+  
+    public static double readDouble(String prompt)  
+    {  
+        return readDouble(prompt, "");  
+    }  
+  
+    public static double readDouble(String prompt, String errorPrompt)  
+    {  
+        while (true) {  
+            try {  
+                System.out.print(prompt);  
+  
+                return Double.parseDouble(KB.nextLine());  
+            }  
+            catch (NumberFormatException ignore) {  
+                System.out.print(errorPrompt);  
+            }  
+        }  
+    }  
+  
+    //...  
+  
+    public static String readString(String prompt)  
+    {  
+        System.out.print(prompt);  
+  
+        return KB.nextLine();  
+    }  
+  
+    public static void write(String fmt, Object...objects)  
+    {  
+        System.out.printf(fmt, objects);  
+    }  
+  
+    public static void writeLine(String fmt, Object...objects)  
+    {  
+        write(fmt + '\n', objects);  
+    }  
+  
+    public static void writeLine()  
+    {  
+        System.out.println();  
+    }  
+  
+    public static void write(Object object)  
+    {  
+        System.out.print(object);  
+    }  
+  
+    public static void writeLine(Object object)  
+    {  
+        System.out.println(object);  
+    }  
+  
+    //...  
+}
+```
+
+>Bir exception sınıfı içerisinde çeşitli veriler tutulabilir ve exception'ı yakalayan kişi bu verileri kullanabilir. Bu anlamda Throwable sınıfı içerisinde bazı veriler tutulabilmektedir. Bunlardan en tipik olanı String türünde message (detail message) elemanıdır. Bu anlamda Throwable sınıfının message parametreli ctor'ları vardır. Message değerini elde etmek için `getMessage` sanal metodu çağrılabilir. Bu sınıftan doğrudan ya da dolaylı olarak türetilen sınıfların genel olarak message parametreli ctor veya ctor'ları bulunur. Exception, Runtimeexception ve Error sınıflarının da message parametreli ctor'ları vardır. Programcı isterse kendi exception sınıfına başka elemanlar da ekleyebilir. getMessage metodu sanal bir metot olduğundan gerektiğinde override edilebilir. JavaSE içerisinde bulunan bazı exception sınıfları (burada bazı az anlamında düşünülmemelidir) bu metodu override etmişlerdir. 
+
+>Aşağıdaki demo örneği inceleyiniz
+
+```java
+package org.csystem.app;  
+  
+import java.util.InputMismatchException;  
+import java.util.Scanner;  
+  
+class App {  
+    public static void main(String[] args)  
+    {  
+        try {  
+            Util.doWork();  
+        }  
+        catch (ZeroException ex) {  
+            System.out.printf("Zero->%s%n", ex.getMessage());  
+        }  
+        catch (NegativeException ex) {  
+            System.out.printf("Negative->%s%n", ex.getMessage());  
+        }  
+        catch (InputMismatchException ignore) {  
+            System.out.println("Invalid numeric value");  
+        }  
+        finally {  
+            System.out.println("finally in main");  
+        }  
+  
+        System.out.println("main ends!...");  
+    }  
+}  
+  
+class Util {  
+    public static void doWork()  
+    {  
+        try {  
+            Scanner kb = new Scanner(System.in);  
+  
+            System.out.print("Input a number:");  
+            double a = kb.nextInt();  
+            double result;  
+            result = MathUtil.log10(a);  
+  
+            System.out.printf("log10(%f) = %f%n", a, result);  
+        }  
+        finally {  
+            System.out.println("finally in doWork");  
+        }  
+  
+        System.out.println("doWork ends!...");  
+    }  
+}  
+  
+class MathUtil {  
+    public static double log10(double a)  
+    {  
+        if (a < 0)  
+            throw new NegativeException("Value %f can not be negative".formatted(a));  
+  
+        if (a == 0)  
+            throw new ZeroException("Value can not be zero");  
+  
+        return Math.log10(a);  
+    }  
+}  
+  
+class ZeroException extends RuntimeException {  
+    public ZeroException()  
+    {  
+  
+    }  
+  
+    public ZeroException(String message)  
+    {  
+        super(message);  
+    }  
+}  
+  
+  
+class NegativeException extends RuntimeException {  
+    public NegativeException()  
+    {  
+  
+    }  
+  
+    public NegativeException(String message)  
+    {  
+        super(message);  
+    }  
+}
+```
+
+>Aşağıdaki demo örneği inceleyiniz
+
+```java
+package org.csystem.app;  
+  
+import java.util.InputMismatchException;  
+import java.util.Scanner;  
+  
+class App {  
+    public static void main(String[] args)  
+    {  
+        try {  
+            Util.doWork();  
+        }  
+        catch (InputMismatchException ignore) {  
+            System.out.println("Invalid numeric value");  
+        }  
+        catch (RuntimeException ex) {  
+            System.out.println(ex.getMessage());  
+        }  
+        finally {  
+            System.out.println("finally in main");  
+        }  
+  
+        System.out.println("main ends!...");  
+    }  
+}  
+  
+class Util {  
+    public static void doWork()  
+    {  
+        try {  
+            Scanner kb = new Scanner(System.in);  
+  
+            System.out.print("Input a number:");  
+            double a = kb.nextInt();  
+            double result;  
+            result = MathUtil.log10(a);  
+  
+            System.out.printf("log10(%f) = %f%n", a, result);  
+        }  
+        finally {  
+            System.out.println("finally in doWork");  
+        }  
+  
+        System.out.println("doWork ends!...");  
+    }  
+}  
+  
+class MathUtil {  
+    public static double log10(double a)  
+    {  
+        if (a < 0)  
+            throw new NaNException("Value %f can not be negative".formatted(a));  
+  
+        if (a == 0)  
+            throw new NegativeInfinityException("Value can not be zero");  
+  
+        return Math.log10(a);  
+    }  
+}  
+  
+class NegativeInfinityException extends MathException {  
+    public NegativeInfinityException()  
+    {  
+        this(null);  
+    }  
+  
+    public NegativeInfinityException(String message)  
+    {  
+        super(message, MatExceptionStatus.NEGATIVE_INFINITY);  
+    }  
+}  
+  
+class NaNException extends MathException {  
+    public NaNException()  
+    {  
+        this(null);  
+    }  
+  
+    public NaNException(String message)  
+    {  
+        super(message, MatExceptionStatus.NAN);  
+    }  
+}  
+  
+  
+class MathException extends RuntimeException {  
+    private final MatExceptionStatus m_matExceptionStatus;  
+  
+    public MathException(String message, MatExceptionStatus matExceptionStatus)  
+    {  
+        super(message);  
+        m_matExceptionStatus = matExceptionStatus;  
+    }  
+  
+    public String getMessage()  
+    {  
+        return "Message:%s, Status:%s".formatted(super.getMessage(), m_matExceptionStatus);  
+    }  
+  
+    public MatExceptionStatus getMatExceptionStatus()  
+    {  
+        return m_matExceptionStatus;  
+    }  
+}  
+  
+enum MatExceptionStatus {  
+    NAN, NEGATIVE, ZERO, INFINITY, POSITIVE_INFINITY, NEGATIVE_INFINITY  
+}
+```
+
+###### 15 Nisan 2025
+
+>Throwable sınıfının `printStackTrace` metotları exception oluşma noktalarını bir stack olarak gösteren bir mesajı ilgili output'a gönderir. Parametresiz `printStackTrace` metodu ekrana (aslında `stderr`'ye) basmak için kullanılabilir. Basılan mesaj exception'ın yakalanmamasından dolayı akışın abnormal olarak sonlandığı durumda basılan mesaja çok benzerdir. Bu mesajlar tipik olarak geliştirme aşamasında debug etmek için kullanılabilmektedir.
+
+**Anahtar Notlar:** Bir takım bilgilerin daha sonra incelemek için saklanmasına yazılmış geliştirmede `logging` denilmektedir. Örneğin, uygulama test aşamasında çalıştırılırken bir takım hata mesajları saklanarak daha sonra incelenebilir. Bunun için her ne kadar `printStackTrace` metotları kullanılabilse de daha detaylı durumlar için bu mesajlar yetersiz kalabilir. Hatta, dışında da bazı mesajların `loglanması` gerekebilir. Bu durumda, `logger` denilen bazı üçüncü parti kütüphaneler kullanılır. Bu sebeple `printStackTrace` özellikle parametresiz overload'u için bazı static kod analizi araçları default konfigürasyonda uyarı mesajı verebilmektedirler. Logger'lar, `Java ile Uygulama Geliştirme` kurslarında kullanılacak ve çeşitli düzeylerde detaylandırılacaktır.
+
+>Aşağıdaki demo örneği inceleyiniz.
+
+```java
+package org.csystem.app;  
+  
+import java.util.InputMismatchException;  
+import java.util.Scanner;  
+  
+class App {  
+    public static void main(String[] args)  
+    {  
+        try {  
+            Util.doWork();  
+        }  
+        catch (InputMismatchException ignore) {  
+            System.out.println("Invalid numeric value");  
+        }  
+        catch (RuntimeException ex) {  
+            ex.printStackTrace();  
+        }  
+        finally {  
+            System.out.println("finally in main");  
+        }  
+  
+        System.out.println("main ends!...");  
+    }  
+}  
+  
+class Util {  
+    public static void doWork()  
+    {  
+        try {  
+            Scanner kb = new Scanner(System.in);  
+  
+            System.out.print("Input a number:");  
+            double a = kb.nextInt();  
+            double result;  
+  
+            result = MathUtil.log10(a);  
+            System.out.printf("log10(%f) = %f%n", a, result);  
+        }  
+        finally {  
+            System.out.println("finally in doWork");  
+        }  
+  
+        System.out.println("doWork ends!...");  
+    }  
+}  
+  
+class MathUtil {  
+    public static double log10(double a)  
+    {  
+        if (a < 0)  
+            throw new NaNException("Value %f can not be negative".formatted(a));  
+  
+        if (a == 0)  
+            throw new NegativeInfinityException("Value can not be zero");  
+  
+        return Math.log10(a);  
+    }  
+}  
+  
+class NegativeInfinityException extends MathException {  
+    public NegativeInfinityException()  
+    {  
+        this(null);  
+    }  
+  
+    public NegativeInfinityException(String message)  
+    {  
+        super(message, MatExceptionStatus.NEGATIVE_INFINITY);  
+    }  
+}  
+  
+class NaNException extends MathException {  
+    public NaNException()  
+    {  
+        this(null);  
+    }  
+  
+    public NaNException(String message)  
+    {  
+        super(message, MatExceptionStatus.NAN);  
+    }  
+}  
+  
+  
+class MathException extends RuntimeException {  
+    private final MatExceptionStatus m_matExceptionStatus;  
+  
+    public MathException(String message, MatExceptionStatus matExceptionStatus)  
+    {  
+        super(message);  
+        m_matExceptionStatus = matExceptionStatus;  
+    }  
+  
+    public String getMessage()  
+    {  
+        return "Message:%s, Status:%s".formatted(super.getMessage(), m_matExceptionStatus);  
+    }  
+  
+    public MatExceptionStatus getMatExceptionStatus()  
+    {  
+        return m_matExceptionStatus;  
+    }  
+}  
+  
+enum MatExceptionStatus {  
+    NAN, NEGATIVE, ZERO, INFINITY, POSITIVE_INFINITY, NEGATIVE_INFINITY  
+}
+```
+
+>Aralarında türetme ilişkisi olmayan birden fazla exception sınıfı fırlatma ihtimali olan bir akışta, tüm bu exception'lar  için ortak bir işlem yapılacaksa catch bloğunda exception sınıfları `|` atomu ile birbirinden ayrılabilir. Bu durumda catch bloğu içerisinde exception sınıflarına ilişkin yalnızca ortak elemanlara erişilebilir. Bu sentaksla yazılan exception sınıflarının aralarında türetme ilişkisi olması error oluşturur. Bu sentaks Java 7 ile dile eklenmiştir.
+
+```java
+package org.csystem.app;  
+   
+import java.util.Scanner;  
+  
+class App {  
+    public static void main(String[] args)  
+    {  
+        try {  
+            Util.doWork();  
+        }  
+        catch (NumberFormatException | NaNException | NegativeInfinityException ex) {  
+            System.out.printf("Message:%s%n", ex.getMessage());  
+        }  
+        finally {  
+            System.out.println("finally in main");  
+        }  
+  
+        System.out.println("main ends!...");  
+    }  
+}  
+  
+class Util {  
+    public static void doWork()  
+    {  
+        try {  
+            Scanner kb = new Scanner(System.in);  
+  
+            System.out.print("Input a number:");  
+            double a = Integer.parseInt(kb.nextLine());  
+            double result;  
+  
+            result = MathUtil.log10(a);  
+            System.out.printf("log10(%f) = %f%n", a, result);  
+        }  
+        finally {  
+            System.out.println("finally in doWork");  
+        }  
+  
+        System.out.println("doWork ends!...");  
+    }  
+}  
+  
+class MathUtil {  
+    public static double log10(double a)  
+    {  
+        if (a < 0)  
+            throw new NaNException("Value %f can not be negative".formatted(a));  
+  
+        if (a == 0)  
+            throw new NegativeInfinityException("Value can not be zero");  
+  
+        return Math.log10(a);  
+    }  
+}  
+  
+class NegativeInfinityException extends RuntimeException {  
+    public NegativeInfinityException()  
+    {  
+        this(null);  
+    }  
+  
+    public NegativeInfinityException(String message)  
+    {  
+        super(message);  
+    }  
+}  
+  
+class NaNException extends RuntimeException {  
+    public NaNException()  
+    {  
+        this(null);  
+    }  
+  
+    public NaNException(String message)  
+    {  
+        super(message);  
+    }  
+}  
+  
+  
+class MathException extends RuntimeException {  
+    private final MatExceptionStatus m_matExceptionStatus;  
+  
+    public MathException(String message, MatExceptionStatus matExceptionStatus)  
+    {  
+        super(message);  
+        m_matExceptionStatus = matExceptionStatus;  
+    }  
+  
+    public String getMessage()  
+    {  
+        return "Message:%s, Status:%s".formatted(super.getMessage(), m_matExceptionStatus);  
+    }  
+  
+    public MatExceptionStatus getMatExceptionStatus()  
+    {  
+        return m_matExceptionStatus;  
+    }  
+}  
+  
+enum MatExceptionStatus {  
+    NAN, NEGATIVE, ZERO, INFINITY, POSITIVE_INFINITY, NEGATIVE_INFINITY  
+}
+```
+
+>Java'da exception'lar kategori olarak iki gruba ayrılır: **checked exceptions, unchecked exceptions**.
+
+![BasicExceptionClasses](./media/BasicExceptionClasses.png)
+>**checked exception:**  Bir exception sınıfının doğrudan taban sınıfı ya da dolaylı taban sınıflarından bir `RuntimeException` veya `Error` sınıflarından biri değilse sınıf checked exception sınıfıdır. 
+>**unchecked exception:** checked olmayan exception sınıflarıdır.
+>
+>Bu tanımlara göre şüphesiz, türemiş exception sınıfının kategorisi, taban sınıfının kategorisi ile aynıdır ve değiştirilemez.
+
+**Anahtar Notlar:** Bir exception sınıfının checked veya unchecked olması çalışma zamanına ilişkin bir kavram değildir. Derleme zamanında checked exception'lar için bazı sentaks ve semantik zorunluluklar söz konusudur. Kategorisi ne olursa olsun, çalışma zamanında exception işlemlerine ilişkin bir değişiklik yoktur.
+
+>Bir checked exception fırlatabilecek bir akış için, ya try deyimi ile ilgili exeption'ın yakalanabileceği bir catch bloğunun olması ya da akışa ilişkin metotta `throws bildirimi (throws declaration)` yapılması gerekir. Aksi durumda error oluşur.
+
+>Aşağıdaki demo örnekte `log10` metodundaki throws listesinde her iki checked exception da fırlatılabileceğinden yani akış içerisinde bunları fırlatan throw deyimleri bulunduğundan ve akış try deyimine alınmadığından throws listesi zorunludur. `doWork`metodunda `NegativeInfinityException` yakalanabildiğinden throws listesine konmaz. Ancak `NaNException` throws listesinde olmalıdır. `main` metodunda `NaNException` da yakalanabildiğinde main metodunda herhangi bir throws listesi olması gerekmez.
+
+```java
+package org.csystem.app;  
+  
+import org.csystem.util.console.Console;  
+  
+import java.util.Scanner;  
+  
+class App {  
+    public static void main(String[] args)  
+    {  
+        try {  
+            Util.doWork();  
+        }  
+        catch (NaNException ex) {  
+            Console.writeLine("NaN Exception:%s", ex.getMessage());  
+        }  
+        finally {  
+            System.out.println("finally in main");  
+        }  
+  
+        System.out.println("main ends!...");  
+    }  
+}  
+  
+class Util {  
+    public static void doWork() throws NaNException  
+    {  
+        try {  
+            Scanner kb = new Scanner(System.in);  
+  
+            double a = Console.readDouble("Input a number:", "Invalid value!...");  
+            double result;  
+  
+            result = MathUtil.log10(a);  
+            System.out.printf("log10(%f) = %f%n", a, result);  
+        }  
+        catch (NegativeInfinityException ex) {  
+            Console.writeLine("Negative Exception:%s", ex.getMessage());  
+        }  
+        finally {  
+            System.out.println("finally in doWork");  
+        }  
+  
+        System.out.println("doWork ends!...");  
+    }  
+}  
+  
+class MathUtil {  
+    public static double log10(double a) throws NaNException, NegativeInfinityException  
+    {  
+        if (a < 0)  
+            throw new NaNException("Value %f can not be negative".formatted(a));  
+  
+        if (a == 0)  
+            throw new NegativeInfinityException("Value can not be zero");  
+  
+        return Math.log10(a);  
+    }  
+}  
+  
+class NegativeInfinityException extends Exception {  
+    public NegativeInfinityException()  
+    {  
+        this(null);  
+    }  
+  
+    public NegativeInfinityException(String message)  
+    {  
+        super(message);  
+    }  
+}  
+  
+class NaNException extends Exception {  
+    public NaNException()  
+    {  
+        this(null);  
+    }  
+  
+    public NaNException(String message)  
+    {  
+        super(message);  
+    }  
+}
+```
+
+###### 22 Nisan 2025
+
+>throws listesinde taban exception sınıfı varsa ondan türemiş exception listeye konmayabilir. Konması error oluşturmaz.  Ancak böyle durumda biz koymamayı tercih edeceğiz.
+
+```java
+package org.csystem.app;  
+  
+import org.csystem.util.console.Console;  
+  
+import java.util.Scanner;  
+  
+class App {  
+    public static void main(String[] args)  
+    {  
+        try {  
+            Util.doWork();  
+        }  
+        catch (MathException ex) {  
+            Console.writeLine("Math Exception:%s", ex.getMessage());  
+        }  
+        finally {  
+            System.out.println("finally in main");  
+        }  
+  
+        System.out.println("main ends!...");  
+    }  
+}  
+  
+class Util {  
+    public static void doWork() throws MathException  
+    {  
+        try {  
+            Scanner kb = new Scanner(System.in);  
+  
+            double a = Console.readDouble("Input a number:", "Invalid value!...");  
+            double result;  
+  
+            result = MathUtil.log10(a);  
+            System.out.printf("log10(%f) = %f%n", a, result);  
+        }  
+        finally {  
+            System.out.println("finally in doWork");  
+        }  
+  
+        System.out.println("doWork ends!...");  
+    }  
+}  
+  
+class MathUtil {  
+    public static double log10(double a) throws MathException  
+    {  
+        if (a < 0)  
+            throw new NaNException("NaNException:Value %f can not be negative".formatted(a));  
+  
+        if (a == 0)  
+            throw new NegativeInfinityException("NegativeInfinityException:Value can not be zero");  
+  
+        return Math.log10(a);  
+    }  
+}  
+  
+class NegativeInfinityException extends MathException {  
+    public NegativeInfinityException()  
+    {  
+        this(null);  
+    }  
+  
+    public NegativeInfinityException(String message)  
+    {  
+        super(message);  
+    }  
+}  
+  
+class NaNException extends MathException {  
+    public NaNException()  
+    {  
+        this(null);  
+    }  
+  
+    public NaNException(String message)  
+    {  
+        super(message);  
+    }  
+}  
+  
+class MathException extends Exception {  
+    public MathException()  
+    {  
+        this(null);  
+    }  
+  
+    public MathException(String message)  
+    {  
+        super(message);  
+    }  
+}
+```
+
+>Bir catch bloğunun parametresi checked bir exception türündense ilgili try bloğu içerisinde o exception'ın fırlatabileceği  en az bir deyimin bulunması gerekir. Aksi durumda error oluşur
+
+```java
+package org.csystem.app;  
+  
+import org.csystem.util.console.Console;  
+  
+import java.util.Scanner;  
+  
+class App {  
+    public static void main(String[] args)  
+    {  
+        try {  
+            Util.doWork();  
+        }  
+        catch (MathException ex) { //error  
+            Console.writeLine("Math Exception:%s", ex.getMessage());  
+        }  
+        finally {  
+            System.out.println("finally in main");  
+        }  
+  
+        System.out.println("main ends!...");  
+    }  
+}  
+  
+class Util {  
+    public static void doWork()  
+    {  
+        try {  
+            Scanner kb = new Scanner(System.in);  
+  
+            double a = Console.readDouble("Input a number:", "Invalid value!...");  
+            double result;  
+  
+            result = MathUtil.log10(a);  
+            System.out.printf("log10(%f) = %f%n", a, result);  
+        }  
+        catch (MathException ex) {  
+            Console.writeLine("Math Exception:%s", ex.getMessage());  
+        }  
+        finally {  
+            System.out.println("finally in doWork");  
+        }  
+  
+        System.out.println("doWork ends!...");  
+    }  
+}  
+  
+class MathUtil {  
+    public static double log10(double a) throws MathException  
+    {  
+        if (a < 0)  
+            throw new NaNException("NaNException:Value %f can not be negative".formatted(a));  
+  
+        if (a == 0)  
+            throw new NegativeInfinityException("NegativeInfinityException:Value can not be zero");  
+  
+        return Math.log10(a);  
+    }  
+}  
+  
+class NegativeInfinityException extends MathException {  
+    public NegativeInfinityException()  
+    {  
+        this(null);  
+    }  
+  
+    public NegativeInfinityException(String message)  
+    {  
+        super(message);  
+    }  
+}  
+  
+class NaNException extends MathException {  
+    public NaNException()  
+    {  
+        this(null);  
+    }  
+  
+    public NaNException(String message)  
+    {  
+        super(message);  
+    }  
+}  
+  
+class MathException extends Exception {  
+    public MathException()  
+    {  
+        this(null);  
+    }  
+  
+    public MathException(String message)  
+    {  
+        super(message);  
+    }  
+}
+```
+
+>Yukarıdaki kural `Throwable` ve `Exception` sınıfları için geçerli değildir
+
+```java
+package org.csystem.app;  
+  
+import org.csystem.util.console.Console;  
+  
+import java.util.Scanner;  
+  
+class App {  
+    public static void main(String[] args)  
+    {  
+        try {  
+            Util.doWork();  
+        }  
+        catch (Exception ex) {  
+            Console.writeLine("Math Exception:%s", ex.getMessage());  
+        }  
+        finally {  
+            System.out.println("finally in main");  
+        }  
+  
+        System.out.println("main ends!...");  
+    }  
+}  
+  
+class Util {  
+    public static void doWork()  
+    {  
+        try {  
+            Scanner kb = new Scanner(System.in);  
+  
+            double a = Console.readDouble("Input a number:", "Invalid value!...");  
+            double result;  
+  
+            result = MathUtil.log10(a);  
+            System.out.printf("log10(%f) = %f%n", a, result);  
+        }  
+        catch (MathException ex) {  
+            Console.writeLine("Math Exception:%s", ex.getMessage());  
+        }  
+        finally {  
+            System.out.println("finally in doWork");  
+        }  
+  
+        System.out.println("doWork ends!...");  
+    }  
+}  
+  
+class MathUtil {  
+    public static double log10(double a) throws MathException  
+    {  
+        if (a < 0)  
+            throw new NaNException("NaNException:Value %f can not be negative".formatted(a));  
+  
+        if (a == 0)  
+            throw new NegativeInfinityException("NegativeInfinityException:Value can not be zero");  
+  
+        return Math.log10(a);  
+    }  
+}  
+  
+class NegativeInfinityException extends MathException {  
+    public NegativeInfinityException()  
+    {  
+        this(null);  
+    }  
+  
+    public NegativeInfinityException(String message)  
+    {  
+        super(message);  
+    }  
+}  
+  
+class NaNException extends MathException {  
+    public NaNException()  
+    {  
+        this(null);  
+    }  
+  
+    public NaNException(String message)  
+    {  
+        super(message);  
+    }  
+}  
+  
+class MathException extends Exception {  
+    public MathException()  
+    {  
+        this(null);  
+    }  
+  
+    public MathException(String message)  
+    {  
+        super(message);  
+    }  
+}
+```
+
+>throws listesi olan sanal bir metot override edildiğinde, throws listesi anlamında şu kurallar söz konusudur.
+>- throws listesine ilişkin sınıflar override edilen metotta yazılmayabilir. Bu durumda hiç throws bildirimi de  yapılmayabilir.  
+>- override edilen metotta throws listesine, sanal metodun throws listesinde bulunan sınıflar veya bu sınıflardan  doğrudan ya da dolaylı olarak türetilmiş exception sınıfları yazılabilir.  
+>
+>Bu kurallara göre override edilen metotta, sanal metodun throws listesinde bulunmayan bir checked exception sınıfı  throws listesinde yazıldığında error oluşur
+
+>Aşağıdaki demo örnekte E sınıfının foo metodunda IOException  fırlatıldığından ya throws listesine yazılması ya da foo metodunun içerisinde yakalanıp işlenmesi gerekir. Bu durumda throws listesine yazılması error oluşturur. Çünkü taban türdeki sanal metodun throws listesinde, IOException'ın kendisi ya da IOException sınıfının doğrudan ya da dolaylı taban sınıflarında bir yoktur. Bu durumda E sınıfında doWork metodunu çağıran ve dışarıya exception fırlatmak isteyen programcının algoritmasında değişiklik yapması yani strateji değiştirmesi gerekir. Demo örnekte A sınıfının ve doWork metodunun değiştirilemeyeceğini varsayınız.
+
+```java
+package org.csystem.app;   
+
+import java.io.IOException;  
+
+
+class Sample {  
+    public static void doWork()  throws IOException  
+    {  
+        //...  
+    }  
+}
+
+class E extends A {  
+    public void foo() throws MathException, IOException //error  
+    {  
+        //... 
+        Sample.doWork();
+    }  
+}  
+  
+class D extends A {  
+    public void foo() throws MathException  
+    {  
+        //...  
+    }  
+}  
+  
+class C extends A {  
+    public void foo() throws NegativeInfinityException, NaNException  
+    {  
+        //...  
+    }  
+}  
+  
+class B extends A {  
+    public void foo()  
+    {  
+        //...  
+    }  
+}  
+  
+abstract class A {  
+    public abstract void foo() throws MathException;  
+    //...  
+}  
+  
+  
+class NegativeInfinityException extends MathException {  
+    public NegativeInfinityException()  
+    {  
+        this(null);  
+    }  
+  
+    public NegativeInfinityException(String message)  
+    {  
+        super(message);  
+    }  
+}  
+  
+class NaNException extends MathException {  
+    public NaNException()  
+    {  
+        this(null);  
+    }  
+  
+    public NaNException(String message)  
+    {  
+        super(message);  
+    }  
+}  
+  
+class MathException extends Exception {  
+    public MathException()  
+    {  
+        this(null);  
+    }  
+  
+    public MathException(String message)  
+    {  
+        super(message);  
+    }  
+}
+```
+
+
+>Throwable sınıfında Throwable türünden cause isimli bir referans da tutulur. Bu durumda bir exception sınıfı içerisinde içsel olarak başka bir exception referansı tutulabilir. İçeride tutulan exception'a **cause exception** ya da **inner exception** denilmektedir. Throwable sınıfının, Throwable parametreli ctor'ları ile cause bilgisi tutulabilir. **getCause** isimli metot ile cause exception referansı elde edilebilir. Şüphesiz cause exception verilmezse getCause metodu null adrese geri döner.
+
+>Yukarıdaki demo örnek cause exception kullanılarak da aşağıdaki gibi yazılabilir. Bu sadece bir çözüm örneğidir. başka çözümler de söz konusu olabilir. Özellikle, checked exception durumunda programcının strateji değiştirmek zorunda kalmasına odaklanınız. Demo örnekte A sınıfının ve doWork metodunun değiştirilemeyeceğini varsaymanız gerektiğini anımsayınız.
+
+```java
+package org.csystem.app;  
+
+import java.io.IOException;  
+  
+class Sample {  
+    public static void doWork()  throws IOException  
+    {  
+        //...  
+    }  
+}  
+  
+class E extends A {  
+    public void foo() throws MathException  
+    {  
+        //...  
+  
+        try {  
+            Sample.doWork();  
+        }  
+        catch (IOException ex) {  
+            throw new WrapperException("io problem occurred", ex);  
+        }  
+    }  
+}  
+  
+class D extends A {  
+    public void foo() throws MathException  
+    {  
+        //...  
+    }  
+}  
+  
+class C extends A {  
+    public void foo() throws NegativeInfinityException, NaNException  
+    {  
+        //...  
+    }  
+}  
+  
+class B extends A {  
+    public void foo()  
+    {  
+        //...  
+    }  
+}  
+  
+abstract class A {  
+    public abstract void foo() throws MathException;  
+    //...  
+}  
+  
+  
+class WrapperException extends RuntimeException {  
+    public WrapperException()  
+    {  
+    }  
+  
+    public WrapperException(String message)  
+    {  
+        this(message, null);  
+    }  
+  
+    public WrapperException(String message, Throwable cause)  
+    {  
+        super(message, cause);  
+    }  
+  
+    public String getMessage()  
+    {  
+        Throwable cause = getCause();  
+  
+        return "Message:%s%s".formatted(super.getMessage(), cause != null ? ", Cause Message:%s".formatted(cause.getMessage()) : "");  
+    }  
+}  
+  
+class NegativeInfinityException extends MathException {  
+    public NegativeInfinityException()  
+    {  
+        this(null);  
+    }  
+  
+    public NegativeInfinityException(String message)  
+    {  
+        super(message);  
+    }  
+}  
+  
+class NaNException extends MathException {  
+    public NaNException()  
+    {  
+        this(null);  
+    }  
+  
+    public NaNException(String message)  
+    {  
+        super(message);  
+    }  
+}  
+  
+class MathException extends Exception {  
+    public MathException()  
+    {  
+        this(null);  
+    }  
+  
+    public MathException(String message)  
+    {  
+        super(message);  
+    }  
+}
+```
+
+>Bazı durumlarda abstract metotlarda yukarıdaki çeşitli checked exception'ların fırlatabileceği düşüncesiyle abstract metotlar `throws Exception` bildirimi yapılır. Bu durumda override edilen metotlarda istenilen checked exception sınıfları throws listesine yazılabilir. 
+
+>Aşağıdaki demo örnekte abstract foo metodunda `throws Exception` bildirimi yapıldığından override edilen metotlarda istenilen checked exception throws listesine yazılabilir
+
+```java
+package org.csystem.app;  
+  
+
+import java.io.IOException;  
+   
+class Sample {  
+    public static void doWork()  throws IOException  
+    {  
+        //...  
+    }  
+}  
+  
+class E extends A {  
+    public void foo() throws MathException, IOException  
+    {  
+        //...  
+  
+        Sample.doWork();  
+    }  
+}  
+  
+class D extends A {  
+    public void foo() throws MathException  
+    {  
+        //...  
+    }  
+}  
+  
+class C extends A {  
+    public void foo() throws NegativeInfinityException, NaNException  
+    {  
+        //...  
+    }  
+}  
+  
+class B extends A {  
+    public void foo()  
+    {  
+        //...  
+    }  
+}  
+  
+abstract class A {  
+    public abstract void foo() throws Exception;  
+    //...  
+}  
+  
+class NegativeInfinityException extends MathException {  
+    public NegativeInfinityException()  
+    {  
+        this(null);  
+    }  
+  
+    public NegativeInfinityException(String message)  
+    {  
+        super(message);  
+    }  
+}  
+  
+class NaNException extends MathException {  
+    public NaNException()  
+    {  
+        this(null);  
+    }  
+  
+    public NaNException(String message)  
+    {  
+        super(message);  
+    }  
+}  
+  
+class MathException extends Exception {  
+    public MathException()  
+    {  
+        this(null);  
+    }  
+  
+    public MathException(String message)  
+    {  
+        super(message);  
+    }  
+}
+```
+
+>Dikkat edilirse checked exception sınıfları her ne kadar programcıyı `handle` etmeye zorlasa da yani bu durum iyi olarak düşünülebilse de bazı noktalarda strateji değiştirmek zorunda kalması programcı açısından  kod yazma bütünlüğünü etkileyebilmektedir. Bu sebeple bazı programcılar checked exception kavramını eleştirirler.  Ayrıca exception kavramının çalışma zamanına ilişkin olması dolayısıyla, checked exception kavramında derleme  zamanına özgü kısıtlamaların olması da bazı programcılar tarafından eleştirilmesine yol açar. Java'nın exception kavramını örnek aldığı C++ programlama dilinde ve Java'yı örnek alan popüler programlama dillerinin hiç birisinde  exception kavramı checked ve unchecked olarak ayrılmamıştır. Her ne kadar eleştirilse de bir Java programcısının  checked ve unchecked ayrımını iyi bilmesi ve kodlarını da ona göre uygun düzenlemesi gerekir
+
+**Anahtar Notlar:** throws bildirimi metodun imzasına dahil değildir.
+
+>Exception işlemlerine yönelik bütün bu anlatılanlara göre aşağıdaki iki önemli soru sorulabilir: 
+>1. **Programcı bir exception sınıfını ne zaman yazacaktır yani yazıp yazmacağına nasıl karar verecektir?** JavaSE'de  pek çok exception sınıfı bulunur. Bu durumda programcı bir exception fırlatması gerektiğinde önce JavaSE'de domain'ine  uygun bir exception sınıfı olup olmadığına bakmalıdır. Eğer varsa onu kullanmalıdır. Yoksa kullandığı teknolojiye  ilişkin kütüphanelerde domain'ine uygun bir exception sınıfı varsa onu kullanmalıdır. Yoksa artık exception sınıfı  yazmalıdır. 
+>2. **Programcı bir exception yazacaksa, sınıfı checked veya unchecked yapacağına nasıl karar verecektir?** Aslında bu  durum, programcıdan programcıya yaklaşımsal olarak farklıdır. Bazı programcılar eğer bir zorunluluk yoksa checked  exception sınıfı yazmazlar. Burada zorunlu durumlardan biri, bir checked exception sınıfından türetme yapmaktır. Biz de  zorunlu olmadıkça checked exception kategorisinde bir sınıf yazmayacağız. Bazı programcılar ise genel olarak kritik  gördükleri yani hemen her durumda handle edilmesi gereken exception sınıflarını checked yapma eğilimindedir. Buradaki  iki teknik için de kötü ya da iyi denemez. Bunlar birer yaklaşımdır ve programcıdan programcıya değişiklik gösterebilir. Ancak, checked exception sınıflarının bazı durumlarda programcının strateji değiştirmesine sebep olduğu da unutulmamalıdır.  Bu anlamda birinci yaklaşımı benimseyen programcılar, **"Bir exception'ın kritik olup olmayacağına zaten programcı  karar vermek durumundadır. Bu durumda zorunlu bırakılması anlamsızdır"** şeklinde düşünürler. İkinci yaklaşımı benimseyen  programcılar ise, **"önemli exception'lar checked yapılarak programcının handle etmesi gerektiğinin farkına vardırırlar"**  şeklinde düşünürler.
+
+>JavaSE'de bulunan çok kullanılan bazı exception sınıfları şunlardır:
+>
+>**- IllegalArgumentException:** Genel olarak bir metodun parametresine geçilen argümanın geçersiz olması durumunda fırlatılan exception sınıfıdır. Konuya özgü olarak bu sınıftan türetilmiş exception sınıfları da bulunmaktadır.
+>**- ClassCastException:** Downcasting işleminde haksız dönüşüm olduğunda JVM tarafından fırlatılır. Haksız dönüşümün kontrolü için handle edilebilir ancak bunun yerine `instanceof` operatörü ve benzeri araçların kullanılması tavsiye edilir. Bu exception programcı tarafından bir metot içerisinde fırlatılmaz.
+>**- NumberFormatException:** IllegalArgumentException sınıfından türetilmiştir. Sarmalayan sınıfların `parseXXX` metotları  (Boolean sınıfının parseBoolean metodu hariç) yazıyı ilgili temel türe çeviremezlerse bu exception'ı fırlatırlar.  
+>**- NoSuchElementException:** Tipik olarak bir elemanın yokluğu durumunda kullanılır.  
+>**- InputMismatchException:** Bu sınıf tipik olarak bir girdinin geçersizliği durumunda kullanılır. Örneğin, Scanner sınıfının  çeşitli metotları (nextInt, nextDouble, nextLong gibi) bu exception'ı fırlatırlar. Bu sınıf NoSuchElementException sınıfından türetilmiştir. 
+>**- ArrayIndexOutOfBoundsException:** Bu exception özel olarak dizinin indeks numarasının geçersiz olduğu durumlarda JVM  tarafından fırlatılır. 
+>**- IndexOutOfBoundsException:** Bu exception sınıfı indeks taşmalarında kullanılır. Örneğin ArrayList sınıfının bazı metotları bu exception'ı fırlatırlar.  
+>**- NullPointerException:** Bir referansın null değeri tutması durumunda o referans ile non-static bir elemana erişilmeye çalışıldığında fırlatılır. Bu exception sınıfının programlamada handle edilmesi tavsiye edilmez. Genel olarak bu duruma yol açabilecek kod parçaları yazılmamalıdır ya da yazılmışsa da düzeltilmelidir.  
+>**- UnSupportedOperationException:** Tipik olarak bir metodun o tür için desteklenmediği ancak bulunması gerektiği durumda kullanılır.  
+>**- IOException:** Input ve/veya output durumlarında kullanılan checked bir exception sınıfıdır. Bu exception sınıfından da önemli bazı exception sınıfları türetilmiştir.  
+>
+>Şüphesiz, yukarıdaki exception sınıfları dışında da pek çok exception sınıfı bulunmaktadır.
+
+
+>Circle sınıfı
+>
+```java
+package org.csystem.math.geometry;  
+  
+import static java.lang.Math.PI;  
+  
+public class Circle {  
+    protected static final double DELTA = 0.000001;  
+    private double m_r;  
+  
+    public Circle()  
+    {  
+    }  
+  
+    public Circle(double radius)  
+    {  
+        setRadius(radius);  
+    }  
+  
+    public void setRadius(double radius)  
+    {  
+        if (radius < 0)  
+            throw new IllegalArgumentException("Radius can not be negative:%f".formatted(radius));  
+  
+        m_r = radius;  
+    }  
+  
+    public double getRadius()  
+    {  
+        return m_r;  
+    }  
+  
+    public double getArea()  
+    {  
+        return PI * m_r * m_r;  
+    }  
+  
+    public double getCircumference()  
+    {  
+        return 2 * PI * m_r;  
+    }  
+  
+    public boolean equals(Object other)  
+    {  
+        return other instanceof Circle c &&Math.abs(m_r - c.m_r) < DELTA;  
+    }  
+  
+    public String toString()  
+    {  
+        return "Radius = %f, Area = %f, Circumference = %f".formatted(m_r, getArea(), getCircumference());  
+    }  
+}
+```
+
+###### 24 Nisan 2025
+
+>**Sınıf Çalışması:** Bir kesri temsil eden Fraction isimli sınıfı aşağıdaki açıklamalara göre yazınız  
+>  
+>**Açıklamalar:**  
+>- Sınıf Matematikteki bir kesri temsil ettiğinden pay (numerator) ve payda (denominator) değerleri tutulacaktır.  
+>- Sınıfın ilgili set ve get metotları yazılacaktır.  
+>- Pay'ın sıfırdan farklı veya sıfır VE paydanın sıfır olması durumunda uygun mesajlar ile `IllegalArgumentException` fırlatılacaktır  
+>- Kesir her durumda sadeleşmiş bir biçimde tutulacaktır. Örneğin kesrin pay ve paydası sırasıyla 4 ve 18 olarak verildiğinde kesir 2 / 9 olarak tutulacaktır.  
+>- Kesir negatif ise işaret payda bulunacaktır. Örneğin kesrin pay ve paydası sırasıyla 3 ve -4 olarak verilmişse  kesir -3 / 4 biçiminde tutulacaktır.  
+>- Kesrin pay ve paydasının her ikisinin birden negatif olması durumunda kesir pozitif olarak tutulacaktır.  
+>- Kesrin payının sıfır olması durumunda payda ne olursa olsun 1(bir) yapılacaktır.  
+>- Sınıfın iki kesri toplayan, bir kesir ile bir tamsayıyı toplayan metotları olacaktır. Aynı işlemler çıkarma, çarpma ve bölme için de yapılacaktır.  
+>- Sınıfın kesri 1(bir) artıran ve bir azaltan inc ve dec metotları yazılacaktır.  
+>- Sınıfın toString metodu şu formatta yazı döndürecek şekilde override edilecektir. Örneğin 3 / 10 kesri için -> 3 / 10 = 3.333333    10 / 1 kesri için -> 10 Ondalık kısımda 6 basamak gösterilecektir. Geri kalan basamaklar yuvarlanacaktır.  
+>- Sınıfın equals metodu iki kesrin eşitlik karşılaştırması için override edilecektir.  
+>- Sınıfın default ctor'u `0 / 1` kesrini temsil eden nesneyi yaratmak için kullanılabilecektir.
+>- Sınıfın compareTo metodu iki kesrin büyüklük küçüklük karşılaştırmasını yapacaktır. String sınıfının compareTo metodunun mantığına göre tasarlayınız.  
+>- Kesrin double türden ondalık değerini döndüren getRealValue metodu yazılacaktır.  
+>- Sınıfın public bölümünü değiştirmeden istediğiniz değişikliği ve eklemeleri yapabilirsiniz.  
+>- Sınıfın public bölümü ile birlikte iskeleti şu şekildedir:  
+  
+```java   
+package org.csystem.math;  
+  
+public class Fraction {  
+    public Fraction()  
+    {  
+        throw new UnsupportedOperationException("TODO:");  
+    }  
+  
+    public Fraction(int a)  
+    {  
+        throw new UnsupportedOperationException("TODO:");  
+    }  
+  
+    public Fraction(int a, int b)  
+    {  
+        throw new UnsupportedOperationException("TODO:");  
+    }  
+  
+    public int getNumerator()  
+    {  
+        throw new UnsupportedOperationException("TODO:");  
+    }  
+  
+    public void setNumerator(int val)  
+    {  
+        throw new UnsupportedOperationException("TODO:");  
+    }  
+  
+    public int getDenominator()  
+    {  
+        throw new UnsupportedOperationException("TODO:");  
+    }  
+  
+    public void setDenominator(int val)  
+    {  
+        throw new UnsupportedOperationException("TODO:");  
+    }  
+  
+    public double getRealValue()  
+    {  
+        throw new UnsupportedOperationException("TODO:");  
+    }  
+  
+    public Fraction add(Fraction other)  
+    {  
+        throw new UnsupportedOperationException("TODO:");  
+    }  
+  
+    public Fraction add(int val)  
+    {  
+        throw new UnsupportedOperationException("TODO:");  
+    }  
+  
+    public Fraction subtract(Fraction other)  
+    {  
+        throw new UnsupportedOperationException("TODO:");  
+    }  
+  
+    public Fraction subtract(int val)  
+    {  
+        throw new UnsupportedOperationException("TODO:");  
+    }  
+  
+    public Fraction multiply(Fraction other)  
+    {  
+        throw new UnsupportedOperationException("TODO:");  
+    }  
+  
+    public Fraction multiply(int val)  
+    {  
+        throw new UnsupportedOperationException("TODO:");  
+    }  
+  
+    public Fraction divide(Fraction other)  
+    {  
+        throw new UnsupportedOperationException("TODO:");  
+    }  
+  
+    public Fraction divide(int val)  
+    {  
+        throw new UnsupportedOperationException("TODO:");  
+    }  
+  
+    public void inc()  
+    {  
+        throw new UnsupportedOperationException("TODO:");  
+    }  
+  
+    public void dec()  
+    {  
+        throw new UnsupportedOperationException("TODO:");  
+    }  
+  
+    public int compareTo(Fraction other)  
+    {  
+        throw new UnsupportedOperationException("TODO:");  
+    }  
+  
+    public boolean equals(Object other)  
+    {  
+        throw new UnsupportedOperationException("TODO:");  
+    }  
+  
+    public String toString()  
+    {  
+         throw new UnsupportedOperationException("TODO:");  
+    }  
+}
+```
+
+**Çözüm:**
+
+>Test Kodları
+```java
+package org.csystem.math.geometry.test;  
+  
+import org.csystem.math.Fraction;  
+import org.csystem.util.console.Console;  
+  
+import java.util.Random;  
+  
+public class FractionCtorsTest {  
+    public static void run()  
+    {  
+        try {  
+            Random r = new Random();  
+            Fraction f1 = new Fraction();  
+            Fraction f2 = new Fraction(3);  
+            Fraction f3 = new Fraction(3, 4);  
+            Fraction f4 = new Fraction(3, -4);  
+            Fraction f5 = new Fraction(-3, -4);  
+            Fraction f6 = new Fraction(120, 160);  
+            Fraction f7 = new Fraction(120, -160);  
+            Fraction f8 = new Fraction(-120, -160);  
+  
+            Console.writeLine("f1 -> %s", f1);  
+            Console.writeLine("f2 -> %s", f2);  
+            Console.writeLine("f3 -> %s", f3);  
+            Console.writeLine("f4 -> %s", f4);  
+            Console.writeLine("f5 -> %s", f5);  
+            Console.writeLine("f6 -> %s", f6);  
+            Console.writeLine("f7 -> %s", f7);  
+            Console.writeLine("f8 -> %s", f8);  
+  
+            int a = r.nextInt(3);  
+  
+            Console.writeLine("a = %d", a);  
+            Fraction f9 = new Fraction(a, 0);  
+        }  
+        catch (IllegalArgumentException ex) {  
+            Console.writeLine(ex.getMessage());  
+        }  
+    }  
+  
+    public static void main(String[] args)  
+    {  
+        run();  
+    }  
+}
+```
+
+```java
+package org.csystem.math.geometry.test;  
+  
+import org.csystem.math.Fraction;  
+import org.csystem.util.console.Console;  
+  
+import java.util.Random;  
+  
+public class FractionSettersTest {  
+    public static void run()  
+    {  
+        try {  
+            Random r = new Random();  
+            Fraction f1 = new Fraction(12, 16);  
+  
+            Console.writeLine("f1 -> %s", f1);  
+  
+            f1.setNumerator(0);  
+  
+            Console.writeLine("f1 -> %s", f1);  
+  
+            f1.setNumerator(6);  
+            Console.writeLine("f1 -> %s", f1);  
+            f1.setDenominator(36);  
+            Console.writeLine("f1 -> %s", f1);  
+  
+            int a = r.nextInt(3);  
+  
+            Console.writeLine("a = %d", a);  
+            f1.setNumerator(a);  
+            f1.setDenominator(0);  
+        }  
+        catch (IllegalArgumentException ex) {  
+            Console.writeLine(ex.getMessage());  
+        }  
+    }  
+  
+    public static void main(String[] args)  
+    {  
+        run();  
+    }  
+}
+```
+
+```java
+package org.csystem.math.geometry.test;  
+  
+import org.csystem.math.Fraction;  
+import org.csystem.util.console.Console;  
+  
+public class FractionComparisonTest {  
+    public static void run()  
+    {  
+        Fraction f1 = new Fraction(1,2);  
+        Fraction f2 = new Fraction(-10, 20);  
+        Fraction f3 = new Fraction(1, -4);  
+        Fraction f4 = new Fraction(3, 4);  
+        Fraction f5 = new Fraction();  
+        Fraction f6 = new Fraction(2, 4);  
+        Fraction f7 = new Fraction(-120, -160);  
+  
+        Console.writeLine(f1.compareTo(f3) > 0);  
+        Console.writeLine(f2.compareTo(f1) < 0);  
+        Console.writeLine(f4.compareTo(f7) == 0);  
+        Console.writeLine(f5.compareTo(f6) < 0);  
+        Console.writeLine(f6.compareTo(f3) > 0);  
+    }  
+    public static void main(String[] args)  
+    {  
+        run();  
+    }  
+}
+```
+
+```java
+package org.csystem.math.geometry.test;  
+  
+import org.csystem.math.Fraction;  
+import org.csystem.util.console.Console;  
+  
+public class FractionEqualityTest {  
+    public static void run(){  
+  
+        Fraction f1 = new Fraction(1, 2);  
+        Fraction f2 = new Fraction(-10, 20);  
+        Fraction f3 = new Fraction(1, -4);  
+        Fraction f4 = new Fraction(3, 4);  
+        Fraction f5 = new Fraction(0, 10);  
+        Fraction f6 = new Fraction();  
+        Fraction f7 = new Fraction(2, 4);  
+        Fraction f8 = new Fraction(-120, -160);  
+  
+        Console.writeLine(f1.equals(f3));  
+        Console.writeLine(f2.equals(f1));  
+        Console.writeLine(f4.equals(f8));  
+        Console.writeLine(f6.equals(f5));  
+        Console.writeLine(f7.equals(f3));  
+  
+    }  
+    public static void main(String[] args)  
+    {  
+        run();  
+    }  
+}
+```
+
+```java
+package org.csystem.math.geometry.test;  
+  
+import org.csystem.math.Fraction;  
+import org.csystem.util.console.Console;  
+  
+public class FractionArithmeticOperationsTest {  
+    public static void run()  
+    {  
+        try {  
+            Fraction f1 = new Fraction(1,2);  
+            Fraction f2 = new Fraction(1, -4);  
+            
+            Console.writeLine(f1.add(f2).equals(new Fraction(1, 4)));  
+            Console.writeLine(f1.subtract(f2).equals(new Fraction(3, 4)));  
+            Console.writeLine(f1.multiply(f2).equals(new Fraction(1, -8)));  
+            Console.writeLine(f1.divide(f2).equals(new Fraction(-2)));  
+            Console.writeLine(f1.divide(new Fraction()));  
+        }  
+        catch (IllegalArgumentException ex) {  
+            Console.writeLine("Exception Message:%s", ex.getMessage());  
+        }  
+    }  
+    public static void main(String[] args)  
+    {  
+        run();  
+    }  
+}
+```
+
+
+>Fraction sınıfı
+
+```java  
+package org.csystem.math;  
+  
+public class Fraction {  
+    private int m_a;  
+    private int m_b;  
+  
+    private static Fraction add(int a1, int b1, int a2, int b2)  
+    {  
+        return new Fraction(a1 * b2 + a2 * b1, b1 * b2);  
+    }  
+  
+    private static Fraction subtract(int a1, int b1, int a2, int b2)  
+    {  
+        return add(a1, b1, -a2, b2);  
+    }  
+  
+    private static Fraction multiply(int a1, int b1, int a2, int b2)  
+    {  
+        return new Fraction(a1 * a2, b1 * b2);  
+    }  
+  
+    private static Fraction divide(int a1, int b1, int a2, int b2)  
+    {  
+        return multiply(a1, b1, b2, a2);  
+    }  
+  
+    private static void check(int a, int b)  
+    {  
+        if (b == 0)  
+            throw new IllegalArgumentException(a == 0 ? "Indeterminate" : "Undefined");  
+    }  
+  
+    private void setSign()  
+    {  
+        if (m_b < 0) {  
+            m_a = -m_a;  
+            m_b = -m_b;  
+        }  
+    }  
+  
+    private void simplify()  
+    {  
+        int min = Math.min(Math.abs(m_a), m_b);  
+  
+        for (int i = min; i >= 2; --i)  
+            if (m_a % i == 0 && m_b % i == 0) {  
+                m_a /= i;  
+                m_b /= i;  
+                break;  
+            }  
+    }  
+  
+    private void setFields(int a, int b)  
+    {  
+        m_a = a;  
+        m_b = b;  
+    }  
+  
+    private void set(int a, int b)  
+    {  
+        if (a == 0) {  
+            setFields(0, 1);  
+            return;  
+        }  
+  
+        setFields(a, b);  
+        setSign();  
+        simplify();  
+    }  
+  
+    public Fraction()  
+    {  
+        this(0);  
+    }  
+  
+    public Fraction(int a)  
+    {  
+        m_a = a;  
+        m_b = 1;  
+    }  
+  
+    public Fraction(int a, int b)  
+    {  
+        check(a, b);  
+        set(a, b);  
+    }  
+  
+    public int getNumerator()  
+    {  
+        return m_a;  
+    }  
+  
+    public void setNumerator(int val)  
+    {  
+        set(val, m_b);  
+    }  
+  
+    public int getDenominator()  
+    {  
+        return m_b;  
+    }  
+  
+    public void setDenominator(int val)  
+    {  
+        check(m_a, val);  
+        set(m_a, val);  
+    }  
+  
+    public double getRealValue()  
+    {  
+        return (double) m_a / m_b;  
+    }  
+  
+    public Fraction add(Fraction other)  
+    {  
+        return add(m_a, m_b, other.m_a, other.m_b);  
+    }  
+  
+    public Fraction add(int val)  
+    {  
+        return add(m_a, m_b, val, 1);  
+    }  
+  
+    public Fraction subtract(Fraction other)  
+    {  
+        return subtract(m_a, m_b, other.m_a, other.m_b);  
+    }  
+  
+    public Fraction subtract(int val)  
+    {  
+        return subtract(m_a, m_b, val, 1);  
+    }  
+  
+    public Fraction multiply(Fraction other)  
+    {  
+        return multiply(m_a, m_b, other.m_a, other.m_b);  
+    }  
+  
+    public Fraction multiply(int val)  
+    {  
+        return multiply(m_a, m_b, val, 1);  
+    }  
+  
+    public Fraction divide(Fraction other)  
+    {  
+        return divide(m_a, m_b, other.m_a, other.m_b);  
+    }  
+  
+    public Fraction divide(int val)  
+    {  
+        return divide(m_a, m_b, val, 1);  
+    }  
+  
+    public void inc()  
+    {  
+        m_a += m_b;  
+    }  
+  
+    public void dec()  
+    {  
+        m_a -= m_b;  
+    }  
+  
+    public int compareTo(Fraction other)  
+    {  
+        return m_a * other.m_b - other.m_a * m_b;  
+    }  
+  
+    public boolean equals(Object other)  
+    {  
+        return other instanceof Fraction f && compareTo(f) == 0;  
+    }  
+  
+    public String toString()  
+    {  
+         return "%d%s".formatted(m_a, m_b != 1 ? " / %d = %.6f".formatted(m_b, getRealValue()) : "");  
+    }  
+}
+```
+
+###### 29 Nisan 2025
+
+##### Arayüzler (Interfaces)
+
+>Bir arayüz (interface) bir UDT bildirimidir. Bir arayüz **interface** anahtar sözcüğü ile bildirilir. Arayüzler en çok `abstract class`'lara benzeseler de sentaks ve semantik olarak farklı kurallara sahiptirler. Arayüzler, Java'da çoklu türetmenin belirli ölçüde kullanılabilmesini de sağlar. Özellikle `Java 8` ile birlikte arayüzler, eklenen yeni özellikler ile daha yetenekli hale gelmişlerdir. 
+>
+>Arayüzler nesne özelliği göstermezler. Yani, bir arayüz türünden nesne hiç bir şekilde yaratıl(a)maz. Arayüzler aslında bir anlaşma (contract) belirtmek için kullanılır.
+
+**Anahtar Notlar:** Arayüz isimlerini diğer UDT'lerden ayırmak için bazı programcılar arayüz isimlerini `I` ile başlatmayı tercih ederler. Bu bir convention olarak düşünülebilir. Biz de arayüz isimlerimiz `I` ile başlatacağız. Ancak JavaSE'de bulunan arayüzler için bu convention kullanılmamaktadır.
+
+>Bir arayüz içerisinde veri elemanı olabilir. Arayüz içerisinde bildirilen bir veri elemanı yazılsa da yazılmasa da `public static final` olarak bildirilmiş olur. Yani bir arayüz içerisinde public olmayan veya non-static olan veya final olmayan bir veri elemanı bildirimi yapılamaz. `public static final` yazarak bildirim yapmak error oluşturmasa da hiç birisinin yazılmaması tavsiye edilir. Bir arayüz içerisinde `public abstract` metot bildirilebilir. Burada yine `public abstract` bildirimde yazılmayabilir. Yazılması error oluşturmasa da yazılmaması tavsiye edilir.  Java 8 ile birlikte non-static bir metodun gövdesi yazılabilmektedir. Yani abstract olmayan bir non-static metot bildirimi yapılabilmektedir. Bu işlem için metot bildiriminde **default** anahtar sözcüğü kullanılır. interface içerisindeki abstract olmayan (non-static) metotlara **default method** da denilmektedir. Default metotlar da public yazılsa da yazılmasa da public olarak bildirilmiş olurlar. Yani, public olmayan default metot veya abstract metot bildirimi yapılamaz. Java 8 ile birlikte bir arayüz içerisinde static metot bildirilebilir. Java 9 ile birlikte bir arayüz içerisinde `private`olarak bildirilmiş static ve non-static metotlar olabilmektedir. Şüphesiz bu metotların gövdeleri olmalıdır. Aksi durumda error oluşur. 
+>
+>Bu açıklamalara göre bir arayüz içerisinde `friendly` veya `protected` bir eleman bildirimi geçersizdir. Dikkat edilirse erişim belirleyicisinin olmaması (no-modifier) arayüzler içerisinde public anlamındadır.
+
+>Aşağıdaki örnek arayüz içerisinde olabilecek tüm elemanlar (member) gösterilmiştir. Şüphesiz bunların her birinden istenildiği kadar olabilmektedir
+
+```java
+interface IX {  
+    int A = 10;  
+    void foo();  
+  
+    default void bar(int a) //Since Java 8  
+    {  
+        //...  
+    }  
+  
+    static void tar(int a, double b) //Since Java 8  
+    {  
+        //...  
+    }  
+  
+    private void car() //Since Java 9  
+    {  
+        //...  
+    }  
+  
+    private static void zar() //Since Java 9  
+    {  
+        //...  
+    }  
+}
+```
+
+
+
+
 
