@@ -1,42 +1,15 @@
 package org.csystem.app;
 
+import org.csystem.util.console.Console;
+import org.csystem.util.string.StringUtil;
+
+import java.util.random.RandomGenerator;
+
 class App {
     public static void main(String[] args)
     {
+        RandomGenerator randomGenerator = RandomGenerator.of("Xoshiro256PlusPlus");
 
+        Console.writeLine(StringUtil.generateRandomTextTR(randomGenerator, 10));
     }
-}
-
-
-interface IX { //marker interface
-    int A = 10;
-    //void foo();
-
-    default void bar(int a) //Since Java 8
-    {
-        //...
-    }
-
-    static void tar(int a, double b) //Since Java 8
-    {
-        //...
-    }
-
-    private void car() //Since Java 9
-    {
-        //...
-    }
-
-    private static void zar() //Since Java 9
-    {
-        //...
-    }
-}
-
-interface IY { //marker interface
-
-}
-
-interface IZ { //functional interface
-    void foo();
 }
